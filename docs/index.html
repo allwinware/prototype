@@ -694,6 +694,8 @@
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
+  var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
+  var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
   function numberWithCommas(x) {
     var str = x + '';
     return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -719,19 +721,24 @@
     return val.length == 1 ? '0' + val : val;
   }
 
-  function loading(type) {
+  function loading() {
     $("#srch-loading").find(".inner.srch-loading").hide();
-    if (type === 'D') {
+    if (_searchType === 'D') {
       $("#srch-loading").find(".inner.dateForm").show();
     } else {
       $("#srch-loading").find(".inner.budgetForm").show();
+      if (_type === 'A') {
+        var $bid = $('.bidding-budget').eq(0).data("awa-bidding");
+        $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
+      } else {
+        var $bid = $('.bidding-budget').eq(1).data("awa-bidding");
+        $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
+      }
     }
     return $("#srch-loading");
   };
 </script>
 <script>
-  var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
-  var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
   $(function () {
 
     $(window).scroll(function () {
@@ -842,7 +849,7 @@
 
     $("button.bt-srch").on('click', function () {
       $("body").addClass("kill");
-      loading(_searchType).show();
+      loading().show();
       if (_searchType === 'D') {
         setTimeout(function () {
           location.href = "./date-srching.html";
