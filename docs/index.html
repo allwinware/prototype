@@ -789,11 +789,9 @@
         step: 100,
         format: "currency",
         slide: function (event, ui) {
-          //console.log("slide");
           $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(ui.value));
         },
         change: function (event, ui) {
-          console.log($(this).closest(".input-item").find("strong.total-price"));
           $(this).closest(".input-item").find("strong.total-price").text(numberWithCommas(ui.value));
         },
         create: function (event, ui) {
@@ -810,11 +808,9 @@
       step: 100,
       format: "currency",
       slide: function (event, ui) {
-        //console.log("slide");
         $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(ui.value));
       },
       change: function (event, ui) {
-        console.log("change");
         $(this).closest(".bids").find("div.total-price strong").text(numberWithCommas(ui.value));
       },
       create: function (event, ui) {
