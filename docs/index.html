@@ -31,7 +31,7 @@
             <li class="m3"><a href="">항공 부가서비스</a></li>
           </ul>
         </div>
-        <button type="button" class="b2b">ALLWIN AIR B2B</button>
+        <button type="button" class="b2b" onclick="window.open('https://allwinair.com')">ALLWIN AIR B2B</button>
       </div>
     </div>
   </div>
@@ -49,8 +49,8 @@
           <div class="bm-srch-form">
             <div class="srch-tabs">
               <ul>
-                <li><a href="" class="is-actived">날짜 검색</a></li>
-                <li><a href="">예산 검색</a></li>
+                <li><a href="#dateForm" class="is-actived">날짜 검색</a></li>
+                <li><a href="#budgetForm">예산 검색</a></li>
               </ul>
             </div>
             <div class="trip-types">
@@ -65,7 +65,7 @@
               </ul>
             </div>
             <!-- 날짜 검색 -->
-            <div class="form-box" style="display:none;">
+            <div class="form-box" id="dateForm">
               <div class="bm-inputs type1">
                 <div class="input-item city">
                   <strong class="tit">출발도시</strong>
@@ -105,7 +105,7 @@
             <!-- //날짜 검색 -->
 
             <!-- 예산 검색 -->
-            <div class="form-box">
+            <div class="form-box" id="budgetForm" style="display:none;">
               <p class="tip">* 깃발을 드래그하여 지불의향가를 선택하세요.</p>
               <div class="bm-inputs type4">
                 <div class="input-item city">
@@ -143,7 +143,7 @@
               <div class="bm-inputs type5">
                 <div class="input-item">
                   <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
-                  <strong class="total-price">230,000</strong>
+                  <strong class="total-price">335,000</strong>
                   <div class="bidding_outer">
                     <div class="awa-bidding"></div>
                   </div>
@@ -532,6 +532,12 @@
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
+  function numberWithCommas(x) {
+    var str = x + '';
+    return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+</script>
+<script>
   $(function () {
 
     $(window).scroll(function () {
@@ -542,22 +548,35 @@
       }
     });
 
+    //날짜/예산 검색 탭 액션
+    $(".bm-srch-form .srch-tabs").find("ul li a").off("click").on("click", function (e) {
+      e.preventDefault();
+      $(".bm-srch-form .srch-tabs").find("ul li a").removeClass("is-actived");
+      $(this).addClass("is-actived");
+
+      $("div.form-box").hide();
+      $($(this).attr("href")).show();
+    });
+
+    //예산 검색 비딩바 액션
     var min = 320000, max = 350000, value = (min + max) / 2;
     $('.awa-bidding').bidding({
       ment: value,
       min: min,
       max: max,
       value: value,
+      step: 100,
+      format: "currency",
       slide: function (event, ui) {
         //console.log("slide");
-        //깃발 움직일때 값 세팅
-        $(this).closest('.bidding_outer').find('.bid__handle-ment').text(ui.value);
+        $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(ui.value));
       },
       change: function (event, ui) {
         //console.log("change");
+        $(this).closest(".input-item").find("strong.total-price").text(numberWithCommas(ui.value));
       },
       create: function (event, ui) {
-        //console.log("create");
+        $(this).find('.bid__handle-ment').html(numberWithCommas(value));
       }
     });
 
