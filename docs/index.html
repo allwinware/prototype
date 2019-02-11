@@ -636,11 +636,14 @@
     <p class="copyright">COPYRIGHT ALLWINWARE INC. ALL RIGHTS RESERVED</p>
   </div>
 </div>
+
 <!-- 로딩 -->
 <div class="bm-loading-layer" id="srch-loading" style="display:none">
   <div class="inner srch-loading dateForm" style="display:none">
     <p class="tits">
-      선택하신 스케줄로<br><strong>실시간 요금 조회중입니다</strong>
+      선택하신 스케줄로<br>
+      <strong class="a_form">실시간 요금 조회중입니다</strong>
+      <strong class="h_form" style="display: none;">예약 가능한 호텔을 조회중입니다</strong>
     </p>
     <div class="trips">
       <div>
@@ -662,7 +665,9 @@
   </div>
   <div class="inner srch-loading budgetForm" style="display:none">
     <p class="tits">
-      선택하신 지불의향가로<br><strong>실시간 스케줄 조회중입니다</strong>-
+      선택하신 지불의향가로<br>
+      <strong class="a_form">실시간 스케줄 조회중입니다</strong>
+      <strong class="h_form" style="display: none;">예약 가능한 호텔을 조회중입니다</strong>
     </p>
     <div class="trips">
       <div>
@@ -686,29 +691,8 @@
       </p>
     </div>
   </div>
-  <div class="inner srch-loading hotelForm" style="display:none">
-    <p class="tits">
-      선택하신 지불의향가로<br><strong>예약 가능한 호텔을 조회중입니다</strong>
-    </p>
-    <div class="trips">
-      <div>
-        <dl>
-          <dt>홍콩<strong>, HONKKONG</strong></dt>
-        </dl>
-      </div>
-      <div class="price">
-        <strong>230,000</strong>
-      </div>
-      <div class="gage" style="width:100%;">
-        <span class="bar"></span>
-        <span class="plane"></span>
-      </div>
-      <p class="tips">
-        선택하신 요금보다<br>더 저렴하거나 같은 요금의<br>호텔이 조회됩니다.
-      </p>
-    </div>
-  </div>
 </div>
+<!-- //로딩 -->
 
 <div class="service-layer" style="display:none;">
   <div class="inner service-step1" style=";">
@@ -803,7 +787,6 @@
   </div>
 </div>
 
-<!-- //로딩 -->
 <script src="https://allwinair.com/resource/js/jquery-2.2.4.min.js"></script>
 <script src="https://allwinair.com/resource/js/jquery.ui.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.util.plugin.min.js"></script>
@@ -839,6 +822,13 @@
 
   function loading() {
     $("#srch-loading").find(".inner.srch-loading").hide();
+    $("#srch-loading").find(".tits strong").hide();
+    if (_type === 'A') {
+      $("#srch-loading").find(".tits strong.a_form").show();
+    } else {
+      $("#srch-loading").find(".tits strong.h_form").show();
+    }
+
     if (_searchType === 'D') {
       $("#srch-loading").find(".inner.dateForm").show();
     } else {
@@ -864,6 +854,7 @@
         $('.bm-header').removeClass('fixed');
       }
     });
+    //항공권/호텔 탭 액션
     $(".bm-srching .type-tabs").find("ul li a").off("click").on("click", function (e) {
       e.preventDefault();
       $(this).parents('.bm-srching .type-tabs').find("ul li a").removeClass("is-actived");
@@ -872,8 +863,10 @@
       $(this).parents('.bm-srching').find("div.bm-srch-form").hide();
       if ($(this).attr("href").indexOf('airForm') > -1) {
         _type = 'A';
+        $("#airForm .srch-tabs").find("ul li a").eq(0).trigger("click");
       } else {
         _type = 'H';
+        $("#hotelForm .srch-tabs").find("ul li a").eq(1).trigger("click");
       }
 
       $($(this).attr("href")).fadeIn();
