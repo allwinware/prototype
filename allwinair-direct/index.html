@@ -22,7 +22,7 @@
 <div class="bm-wrap">
     <div class="bm-header">
         <div class="inner">
-            <h1 class="logo">ALLWIN AIR Direct</h1>
+            <a href="/prototype/allwinair-direct/index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
             <div class="menus">
                 <div class="menu">
                     <ul>
@@ -590,11 +590,32 @@
             pause: 5000,
             auto: true
         });
+
+        countdown();
     });
 
     function numberWithCommas(x) {
       var str = x + '';
       return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function countdown() {
+        var now = new Date();
+        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24, 0, 0);
+
+        var seconds = (endAt - now) / 1000;
+        var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
+        var min = convertTimeFormat((seconds % 3600) / 60);
+        var sec = convertTimeFormat(seconds % 60);
+        var ret = hour + ':' + min + ':' + sec;
+
+        $('.hot .prd-slider .item .times strong').html(ret);
+        setTimeout('countdown()', 1000);
+    }
+
+    function convertTimeFormat(val) {
+        val = parseInt(val).toString();
+        return val.length == 1 ? '0' + val : val;
     }
 </script>
 </body>
