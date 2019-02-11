@@ -22,7 +22,7 @@
 <div class="bm-wrap">
   <div class="bm-header">
     <div class="inner">
-      <a href="/prototype/allwinair-direct/index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
+      <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
       <div class="menus">
         <div class="menu">
           <ul>
@@ -525,7 +525,7 @@
             </div>
           </div>
           <!-- GO 레이어 -->
-          <div class="bm-prd-layer" style="display:none;">
+          <div class="bm-prd-layer go-bm-prd-layer" style="display:none;">
             <div class="airline">
               <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
                                     onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
@@ -575,7 +575,7 @@
           </div>
           <!-- //GO 레이어 -->
           <!-- HOT 레이어 -->
-          <div class="bm-prd-layer" style="display:none;">
+          <div class="bm-prd-layer hot-bm-prd-layer" style="display:none;">
             <div class="airline">
               <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
                                     onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
@@ -694,6 +694,42 @@
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
+  function numberWithCommas(x) {
+    var str = x + '';
+    return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  function countdown() {
+    var now = new Date();
+    var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+
+    var seconds = (endAt - now) / 1000;
+    var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
+    var min = convertTimeFormat((seconds % 3600) / 60);
+    var sec = convertTimeFormat(seconds % 60);
+    var ret = hour + ':' + min + ':' + sec;
+
+    $('.hot .prd-slider .item .times strong').html(ret);
+    $('.bm-prd-layer .infos .time').html(ret);
+    setTimeout('countdown()', 1000);
+  }
+
+  function convertTimeFormat(val) {
+    val = parseInt(val).toString();
+    return val.length == 1 ? '0' + val : val;
+  }
+
+  function loading(type) {
+    $("#srch-loading").find(".inner.srch-loading").hide();
+    if (type === 'D') {
+      $("#srch-loading").find(".inner.dateForm").show();
+    } else {
+      $("#srch-loading").find(".inner.budgetForm").show();
+    }
+    return $("#srch-loading");
+  };
+</script>
+<script>
   var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
   var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
   $(function () {
@@ -766,6 +802,20 @@
       auto: true
     });
 
+    $('.bm-prds .prd-slider .item .bt1').on('click', function () {
+      $('.go-bm-prd-layer').show();
+      $('.go-bm-prd-layer button.close').off('click').on('click', function () {
+        $('.go-bm-prd-layer').hide();
+      });
+    });
+
+    $('.bm-prds .prd-slider .item .bt2').on('click', function () {
+      $('.hot-bm-prd-layer').show();
+      $('.hot-bm-prd-layer button.close').off('click').on('click', function () {
+        $('.hot-bm-prd-layer').hide();
+      });
+    });
+
     countdown();
 
     $("button.bt-srch").on('click', function () {
@@ -782,40 +832,6 @@
       }
     });
   });
-
-  function loading(type) {
-    $("#srch-loading").find(".inner.srch-loading").hide();
-    if (type === 'D') {
-      $("#srch-loading").find(".inner.dateForm").show();
-    } else {
-      $("#srch-loading").find(".inner.budgetForm").show();
-    }
-    return $("#srch-loading");
-  };
-
-  function numberWithCommas(x) {
-    var str = x + '';
-    return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
-  function countdown() {
-    var now = new Date();
-    var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-
-    var seconds = (endAt - now) / 1000;
-    var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
-    var min = convertTimeFormat((seconds % 3600) / 60);
-    var sec = convertTimeFormat(seconds % 60);
-    var ret = hour + ':' + min + ':' + sec;
-
-    $('.hot .prd-slider .item .times strong').html(ret);
-    setTimeout('countdown()', 1000);
-  }
-
-  function convertTimeFormat(val) {
-    val = parseInt(val).toString();
-    return val.length == 1 ? '0' + val : val;
-  }
 </script>
 </body>
 </html>
