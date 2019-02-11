@@ -117,6 +117,27 @@
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
+    function countdown() {
+        var now = new Date();
+        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+
+        var seconds = (endAt - now) / 1000;
+        var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
+        var min = convertTimeFormat((seconds % 3600) / 60);
+        var sec = convertTimeFormat(seconds % 60);
+        var ret = hour + ':' + min + ':' + sec;
+
+        $('.bm-result-inner .results span.time').html(ret);
+        setTimeout('countdown()', 1000);
+    }
+
+    function convertTimeFormat(val) {
+        val = parseInt(val).toString();
+        return val.length == 1 ? '0' + val : val;
+    }
+
+</script>
+<script>
     $(function () {
 
         $(window).scroll(function () {
@@ -154,6 +175,8 @@
             pause: 5000,
             auto: true
         });
+
+        countdown();
     });
 </script>
 </body>

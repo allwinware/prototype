@@ -760,7 +760,7 @@
         _type = 'H';
       }
 
-      $($(this).attr("href")).show();
+      $($(this).attr("href")).fadeIn();
     });
     //날짜/예산 검색 탭 액션
     $(".bm-srch-form .srch-tabs").find("ul li a").off("click").on("click", function (e) {
@@ -775,7 +775,7 @@
         _searchType = 'B';
       }
 
-      $($(this).attr("href")).show();
+      $($(this).attr("href")).fadeIn();
     });
 
     //예산 검색 비딩바 액션
@@ -832,16 +832,16 @@
     });
 
     $('.bm-prds .prd-slider .item .bt1').on('click', function () {
-      $('.go-bm-prd-layer').show();
+      $('.go-bm-prd-layer').fadeIn();
       $('.go-bm-prd-layer button.close').off('click').on('click', function() {
-        $('.go-bm-prd-layer').hide();
+        $('.go-bm-prd-layer').fadeOut();
       });
     });
 
     $('.bm-prds .prd-slider .item .bt2').on('click', function () {
-      $('.hot-bm-prd-layer').show();
+      $('.hot-bm-prd-layer').fadeIn();
       $('.hot-bm-prd-layer button.close').off('click').on('click', function() {
-        $('.hot-bm-prd-layer').hide();
+        $('.hot-bm-prd-layer').fadeOut();
       });
     });
 
