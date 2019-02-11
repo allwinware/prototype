@@ -22,7 +22,7 @@
 <div class="bm-wrap">
     <div class="bm-header">
         <div class="inner">
-            <h1 class="logo">ALLWIN AIR Direct</h1>
+            <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
             <div class="menus">
                 <div class="menu">
                     <ul>
@@ -42,15 +42,15 @@
                 <div class="inner">
                     <div class="type-tabs">
                         <ul>
-                            <li class="ticker"><a href="#">항공권</a></li>
+                            <li class="ticker"><a href="./index.html">항공권</a></li>
                             <li class="hotel"><a href="#" class="is-actived">호텔</a></li>
                         </ul>
                     </div>
                     <div class="bm-srch-form">
                         <div class="srch-tabs">
                             <ul>
-                                <li><a href="">날짜 검색</a></li>
-                                <li><a href="" class="is-actived">예산 검색</a></li>
+                                <li><a href="#dateForm" class="is-actived">날짜 검색</a></li>
+                                <li><a href="#budgetForm">예산 검색</a></li>
                             </ul>
                         </div>
                         <div class="trip-types">
@@ -65,7 +65,7 @@
                             </ul>
                         </div>
                         <!-- 날짜 검색 -->
-                        <div class="form-box" style="display:none;">
+                        <div class="form-box" id="dateForm">
                             <div class="bm-inputs type1">
                                 <div class="input-item city2">
                                     <strong class="tit">여행도시</strong>
@@ -98,7 +98,7 @@
                         <!-- //날짜 검색 -->
 
                         <!-- 예산 검색 -->
-                        <div class="form-box">
+                        <div class="form-box" id="budgetForm" style="display:none;">
                             <p class="tip">* 깃발을 드래그하여 지불의향가를 선택하세요.</p>
                             <div class="bm-inputs type4">
                                 <div class="input-item city2">
@@ -400,7 +400,7 @@
                         </div>
                     </div>
                     <!-- GO 레이어 -->
-                    <div class="bm-prd-layer" style="display:none;">
+                    <div class="bm-prd-layer go-bm-prd-layer" style="display:none;">
                         <div class="airline">
                             <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
                                                   onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
@@ -450,7 +450,7 @@
                     </div>
                     <!-- //GO 레이어 -->
                     <!-- HOT 레이어 -->
-                    <div class="bm-prd-layer" style="display:none;">
+                    <div class="bm-prd-layer hot-bm-prd-layer" style="display:none;">
                         <div class="airline">
                             <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
                                                   onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
@@ -518,6 +518,33 @@
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
+    function numberWithCommas(x) {
+        var str = x + '';
+        return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function countdown() {
+        var now = new Date();
+        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+
+        var seconds = (endAt - now) / 1000;
+        var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
+        var min = convertTimeFormat((seconds % 3600) / 60);
+        var sec = convertTimeFormat(seconds % 60);
+        var ret = hour + ':' + min + ':' + sec;
+
+        $('.hot .prd-slider .item .times strong').html(ret);
+        $('.bm-prd-layer .infos .time').html(ret);
+        setTimeout('countdown()', 1000);
+    }
+
+    function convertTimeFormat(val) {
+        val = parseInt(val).toString();
+        return val.length == 1 ? '0' + val : val;
+    }
+
+</script>
+<script>
     $(function () {
 
         $(window).scroll(function () {
@@ -528,22 +555,35 @@
             }
         });
 
+        //날짜/예산 검색 탭 액션
+        $(".bm-srch-form .srch-tabs").find("ul li a").off("click").on("click", function (e) {
+            e.preventDefault();
+            $(".bm-srch-form .srch-tabs").find("ul li a").removeClass("is-actived");
+            $(this).addClass("is-actived");
+
+            $("div.form-box").hide();
+            $($(this).attr("href")).show();
+        });
+
+        //예산 검색 비딩바 액션
         var min = 320000, max = 350000, value = (min + max) / 2;
         $('.awa-bidding').bidding({
             ment: value,
             min: min,
             max: max,
             value: value,
+            step: 100,
+            format: "currency",
             slide: function (event, ui) {
                 //console.log("slide");
-                //깃발 움직일때 값 세팅
-                $(this).closest('.bidding_outer').find('.bid__handle-ment').text(ui.value);
+                $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(ui.value));
             },
             change: function (event, ui) {
                 //console.log("change");
+                $(this).closest(".input-item").find("strong.total-price").text(numberWithCommas(ui.value));
             },
             create: function (event, ui) {
-                //console.log("create");
+                $(this).find('.bid__handle-ment').html(numberWithCommas(value));
             }
         });
 
@@ -555,7 +595,25 @@
             pause: 5000,
             auto: true
         });
+
+        $('.bm-prds .prd-slider .item .bt1').on('click', function () {
+            $('.go-bm-prd-layer').show();
+            $('.go-bm-prd-layer button.close').off('click').on('click', function() {
+                $('.go-bm-prd-layer').hide();
+            });
+        });
+
+        $('.bm-prds .prd-slider .item .bt2').on('click', function () {
+            $('.hot-bm-prd-layer').show();
+            $('.hot-bm-prd-layer button.close').off('click').on('click', function() {
+                $('.hot-bm-prd-layer').hide();
+            });
+        });
+
+
+        countdown();
     });
+
 </script>
 </body>
 </html>

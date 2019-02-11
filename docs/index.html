@@ -22,7 +22,7 @@
 <div class="bm-wrap">
   <div class="bm-header">
     <div class="inner">
-      <a href="/prototype/allwinair-direct/index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
+      <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
       <div class="menus">
         <div class="menu">
           <ul>
@@ -43,7 +43,7 @@
           <div class="type-tabs">
             <ul>
               <li class="ticker"><a href="#" class="is-actived">항공권</a></li>
-              <li class="hotel"><a href="#">호텔</a></li>
+              <li class="hotel"><a href="./index2.html">호텔</a></li>
             </ul>
           </div>
           <div class="bm-srch-form">
@@ -414,7 +414,7 @@
             </div>
           </div>
           <!-- GO 레이어 -->
-          <div class="bm-prd-layer" style="display:none;">
+          <div class="bm-prd-layer go-bm-prd-layer" style="display:none;">
             <div class="airline">
               <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
                                     onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
@@ -464,7 +464,7 @@
           </div>
           <!-- //GO 레이어 -->
           <!-- HOT 레이어 -->
-          <div class="bm-prd-layer" style="display:none;">
+          <div class="bm-prd-layer hot-bm-prd-layer" style="display:none;">
             <div class="airline">
               <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
                                     onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
@@ -548,6 +548,7 @@
     var ret = hour + ':' + min + ':' + sec;
 
     $('.hot .prd-slider .item .times strong').html(ret);
+    $('.bm-prd-layer .infos .time').html(ret);
     setTimeout('countdown()', 1000);
   }
 
@@ -607,6 +608,20 @@
       moveSlides: 2,
       pause: 5000,
       auto: true
+    });
+
+    $('.bm-prds .prd-slider .item .bt1').on('click', function () {
+      $('.go-bm-prd-layer').show();
+      $('.go-bm-prd-layer button.close').off('click').on('click', function() {
+        $('.go-bm-prd-layer').hide();
+      });
+    });
+
+    $('.bm-prds .prd-slider .item .bt2').on('click', function () {
+      $('.hot-bm-prd-layer').show();
+      $('.hot-bm-prd-layer button.close').off('click').on('click', function() {
+        $('.hot-bm-prd-layer').hide();
+      });
     });
 
     countdown();
