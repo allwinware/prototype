@@ -18,7 +18,7 @@
   <title>ALLWIN BM</title>
   <link rel="stylesheet" href="resource/css/bm.ui.min.css">
 </head>
-<body class="main">
+<body>
 <div class="bm-wrap">
   <div class="bm-header">
     <div class="inner">
@@ -525,6 +525,36 @@
     <p class="copyright">COPYRIGHT ALLWINWARE INC. ALL RIGHTS RESERVED</p>
   </div>
 </div>
+
+<!-- 로딩 -->
+<div class="bm-loading-layer" id="srch-loading" style="display:block">
+  <div class="inner srch-loading">
+    <p class="tits">
+      선택하신 스케줄로<br><strong>실시간 요금 조회중입니다</strong>
+    </p>
+    <!--<p class="tits">-->
+    <!--선택하신 지불의향가로<br><strong>실시간 스케줄 조회중입니다</strong>-->
+    <!--</p>-->
+    <div class="trips">
+      <div>
+        <dl>
+          <dt>인천 <strong>ICN</strong></dt>
+          <dd>19.03.05 (월)</dd>
+        </dl>
+        <span class="trip-plane"></span>
+        <dl>
+          <dt>홍콩 <strong>HKG</strong></dt>
+          <dd>19.03.08 (목)</dd>
+        </dl>
+      </div>
+      <div class="gage" style="width:100%;">
+        <span class="bar"></span>
+        <span class="plane"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //로딩 -->
 
 <script src="https://allwinair.com/resource/js/jquery-2.2.4.min.js"></script>
 <script src="https://allwinair.com/resource/js/jquery.ui.min.js"></script>
