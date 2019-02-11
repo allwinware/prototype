@@ -601,7 +601,7 @@
 
     function countdown() {
         var now = new Date();
-        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24, 0, 0);
+        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
 
         var seconds = (endAt - now) / 1000;
         var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
