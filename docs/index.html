@@ -937,6 +937,10 @@
     });
 
     $('.bm-prds .prd-slider .item .bt1').on('click', function () {
+
+      var realtimePrice = (Math.floor(Math.random() * 20) + 1) * 10000 + 100000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
+
       $('.go-bm-prd-layer').fadeIn();
       $('.go-bm-prd-layer button.close').off('click').on('click', function() {
         $('.go-bm-prd-layer').fadeOut();
