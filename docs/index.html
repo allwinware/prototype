@@ -56,8 +56,8 @@
           <div class="bm-srch-form" id="airForm">
             <div class="srch-tabs">
               <ul>
-                <li><a href="#a_dateForm" class="is-actived">날짜로 검색</a></li>
-                <li><a href="#a_budgetForm">예산으로 검색</a></li>
+                <li><a href="#a_dateForm">날짜로 검색</a></li>
+                <li><a href="#a_budgetForm" class="is-actived">예산으로 검색</a></li>
               </ul>
             </div>
             <div class="trip-types">
@@ -80,7 +80,7 @@
               </ul>
             </div>
             <!-- 날짜 검색 -->
-            <div class="form-box" id="a_dateForm">
+            <div class="form-box" id="a_dateForm" style="display:none;">
               <div class="bm-inputs type1">
                 <div class="input-item city">
                   <strong class="tit">출발도시</strong>
@@ -120,7 +120,7 @@
             <!-- //날짜 검색 -->
 
             <!-- 예산 검색 -->
-            <div class="form-box" id="a_budgetForm" style="display:none;">
+            <div class="form-box" id="a_budgetForm">
               <p class="tip">* 깃발을 드래그하여 지불의향가를 선택하세요.</p>
               <div class="bm-inputs type4">
                 <div class="input-item city">
@@ -158,7 +158,7 @@
               <div class="bm-inputs type5">
                 <div class="input-item">
                   <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
-                  <strong class="total-price">335,000</strong>
+                  <strong class="total-price">345,000</strong>
                   <div class="bidding_outer">
                     <div class="awa-bidding bidding-budget"></div>
                   </div>
@@ -261,7 +261,7 @@
               <div class="bm-inputs type5">
                 <div class="input-item">
                   <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
-                  <strong class="total-price">335,000</strong>
+                  <strong class="total-price">345,000</strong>
                   <div class="bidding_outer">
                     <div class="awa-bidding bidding-budget"></div>
                   </div>
@@ -605,8 +605,8 @@
             </div>
             <div class="infos">
               <dl>
-                <dt>잔여수량</dt>
-                <dd class="ea red">7</dd>
+                <dt>입찰가능수량</dt>
+                <dd class="ea red">8</dd>
               </dl>
               <dl>
                 <dt>관심 갖는 중</dt>
@@ -905,7 +905,7 @@
     });
 
     //예산 검색 비딩바 액션
-    var min = 320000, max = 350000, value = (min + max) / 2;
+    var min = 180000, max = 510000, value = (min + max) / 2;
     $('.bidding-budget').each(function () {
       $(this).bidding({
         ment: value,
@@ -953,9 +953,9 @@
       auto: true
     });
 
-    $('.bm-prds .prd-slider .item .bt1').on('click', function () {
-
-      var realtimePrice = (Math.floor(Math.random() * 20) + 1) * 10000 + 100000;
+    $('.bm-prds .prd-slider .item .bt1').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
       $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
 
       $('.go-bm-prd-layer').fadeIn();
@@ -964,11 +964,18 @@
       });
     });
 
-    $('.bm-prds .prd-slider .item .bt2').on('click', function () {
+    $('.bm-prds .prd-slider .item .bt2').on('click', function (e) {
+      e.preventDefault();
       $('.hot-bm-prd-layer').fadeIn();
       $('.hot-bm-prd-layer button.close').off('click').on('click', function() {
         $('.hot-bm-prd-layer').fadeOut();
       });
+    });
+
+    $('.go-bm-prd-layer .info2 .total-price .total-price-tit').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
     });
 
     countdown();
@@ -999,7 +1006,7 @@
         $('.service-layer .inner').hide();
         $('.service-layer .service-step1').show();
 
-        var upgradePrice = (Math.floor(Math.random() * 20) + 1) * 10000 + 100000;
+        var upgradePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
         $('.service-layer .service-step2 .price strong').html(numberWithCommas(upgradePrice) + '원');
 
         $('.service-layer').fadeIn();
