@@ -25,9 +25,9 @@
       <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
       <div class="lang">
         <ul>
-          <li><img src="resource/img/bm/img_en.png" alt=""></li>
-          <li><img src="resource/img/bm/img_jp.png" alt=""></li>
-          <li><img src="resource/img/bm/img_ch.png" alt=""></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_en.png" alt=""></a></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_jp.png" alt=""></a></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_ch.png" alt=""></a></li>
         </ul>
       </div>
       <div class="menus">
@@ -414,7 +414,7 @@
           <div class="hot">
             <div class="bm-tits">
               <strong class="t1 red">HOT</strong>
-              <strong class="t2"><img src="resource/img/bm/img_go-txt.png" alt="인기시즌 입찰!"></strong>
+              <strong class="t2"><img src="resource/img/bm/img_hot-txt.png" alt="인기시즌 입찰!"></strong>
               <p class="t3">나의 입찰가보다 낮은 가격으로 공동낙찰 </p>
             </div>
             <div class="prd-slider">
@@ -605,7 +605,7 @@
             </div>
             <div class="infos">
               <dl>
-                <dt>입찰가능수량</dt>
+                <dt>입찰 가능 수량</dt>
                 <dd class="ea red">8</dd>
               </dl>
               <dl>
@@ -973,12 +973,6 @@
       $('.hot-bm-prd-layer button.close').off('click').on('click', function() {
         $('.hot-bm-prd-layer').fadeOut();
       });
-    });
-
-    $('.go-bm-prd-layer .info2 .total-price .total-price-tit').on('click', function (e) {
-      e.preventDefault();
-      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
-      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
     });
 
     countdown();
