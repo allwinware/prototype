@@ -100,9 +100,9 @@
                 <div class="input-item">
                   <strong class="tit">출/귀국일</strong>
                   <div class="text">
-                    <strong class="t1">18.11.05</strong><em class="t2">(월)</em>
+                    <strong class="t1">19.03.21</strong><em class="t2">(월)</em>
                     <em class="ico">/</em>
-                    <strong class="t1">18.11.05</strong><em class="t2">(월)</em>
+                    <strong class="t1">19.03.28</strong><em class="t2">(수)</em>
                   </div>
                 </div>
               </div>
@@ -745,7 +745,7 @@
         </div>
         <img src="resource/img/bm/img_service-layer4.png" alt="">
         <div class="price">
-          <span>Realtime Price</span>
+          <span style="cursor: pointer">Realtime Price</span>
           <strong>150,000원</strong>
         </div>
         <button type="button" class="bt-upgrade" onclick="$(this).parent().parent().parent().fadeOut();$('.service-step3').fadeIn();">좌석
@@ -881,7 +881,7 @@
       $('.service-list ul').hide();
       if ($(this).attr("href").indexOf('airForm') > -1) {
         _type = 'A';
-        $("#airForm .srch-tabs").find("ul li a").eq(0).trigger("click");
+        $("#airForm .srch-tabs").find("ul li a").eq(1).trigger("click");
         $('#air-service').show();
       } else {
         _type = 'H';
@@ -973,6 +973,12 @@
       $('.hot-bm-prd-layer button.close').off('click').on('click', function() {
         $('.hot-bm-prd-layer').fadeOut();
       });
+    });
+
+    $('.service-layer .service-step2 .price span').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.service-layer .service-step2 .price strong').html(numberWithCommas(realtimePrice) + '원');
     });
 
     countdown();
