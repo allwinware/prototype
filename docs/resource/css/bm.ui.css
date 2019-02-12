@@ -132,6 +132,18 @@
   font-size: 0;
 }
 
+.bm-header .inner .lang {
+  position: absolute;
+  top: 45px;
+  left: 233px;
+  font-size: 0;
+}
+
+.bm-header .inner .lang li {
+  display: inline-block;
+  margin-right: 7px;
+}
+
 .bm-header .inner .menus {
   position: absolute;
   top: 34px;

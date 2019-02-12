@@ -23,6 +23,13 @@
     <div class="bm-header">
         <div class="inner">
             <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
+            <div class="lang">
+                <ul>
+                    <li><img src="resource/img/bm/img_en.png" alt=""></li>
+                    <li><img src="resource/img/bm/img_jp.png" alt=""></li>
+                    <li><img src="resource/img/bm/img_ch.png" alt=""></li>
+                </ul>
+            </div>
             <div class="menus">
                 <div class="menu">
                     <ul>
@@ -47,12 +54,19 @@
                         <p class="t3">다른 사람보다 먼저, 더 저렴한 가격으로 탑승하는 항공편의 부가서비스까지 선점하세요! </p>
                     </div>
                     <div class="service-list">
-                        <ul>
-                            <li><a href=""><img src="resource/img/bm/img_service1.jpg" alt="좌석 업그레이드"></a></li>
-                            <li><a href=""><img src="resource/img/bm/img_service2.jpg" alt="복도 좌석 미리 확보"></a></li>
-                            <li><a href=""><img src="resource/img/bm/img_service3.jpg" alt="옆좌석 비우기"></a></li>
-                            <li><a href=""><img src="resource/img/bm/img_service4.jpg" alt="위탁 수화물 추가 "></a></li>
-                            <li><a href=""><img src="resource/img/bm/img_service5.jpg" alt="라운지 이용권 "></a></li>
+                        <ul id="air-service">
+                            <li><a href="#upgrade"><img src="resource/img/bm/img_service1.jpg" alt="좌석 업그레이드"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service2.jpg" alt="복도 좌석 미리 확보"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service3.jpg" alt="옆좌석 비우기"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service4.jpg" alt="위탁 수화물 추가 "></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service5.jpg" alt="와이파이 "></a></li>
+                        </ul>
+                        <ul id="hotel-serice" style="display:none;">
+                            <li><a href="#none"><img src="resource/img/bm/img_service1-2.jpg" alt="룸업그레이드"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service2-2.jpg" alt="이그제큐티브 라운지"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service3-2.jpg" alt="조식 추가"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service4-2.jpg" alt="얼리 체크인"></a></li>
+                            <li><a href="#none"><img src="resource/img/bm/img_service5-2.jpg" alt="레이트 체크아웃"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -99,12 +113,161 @@
 </div>
 <!-- //로딩 -->
 
+<div class="service-layer" style="display:none;">
+    <div class="inner service-step1" style=";">
+        <div class="outer">
+            <strong class="tit">예약한 항공 스케줄이 맞나요?</strong>
+            <div class="seat-upgrade">
+                <div class="reservation-list">
+                    <ul>
+                        <li><img src="resource/img/bm/img_service-layer1.png" alt=""></li>
+                        <li><img src="resource/img/bm/img_service-layer1.png" alt=""></li>
+                    </ul>
+                </div>
+                <button type="button" class="bt-upgrade"
+                        onclick="$(this).parent().parent().parent().fadeOut();$('.service-step2').fadeIn();">좌석
+                    업그레이드
+                </button>
+            </div>
+            <div class="reservation-check">
+                <img src="resource/img/bm/img_service-layer2.png" alt="">
+            </div>
+        </div>
+        <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+    </div>
+
+    <div class="inner service-step2" style="display:none;">
+        <div class="outer">
+            <strong class="tit">좌석 업그레이드</strong>
+            <div class="seat-upgrade2">
+                <img src="resource/img/bm/img_service-layer3.png" alt="">
+                <div class="mov">
+                    <iframe width="419" height="235" src="https://www.youtube.com/embed/jveoCyFv4_A" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="info">
+                    <strong class="time"><em>4시간 52분 21초</em> 남음</strong>
+                    <strong class="seat"><em>9석</em> 남음</strong>
+                </div>
+                <img src="resource/img/bm/img_service-layer4.png" alt="">
+                <div class="price">
+                    <span>Realtime Price</span>
+                    <strong>150,000원</strong>
+                </div>
+                <button type="button" class="bt-upgrade"
+                        onclick="$(this).parent().parent().parent().fadeOut();$('.service-step3').fadeIn();">좌석
+                    업그레이드하기
+                </button>
+            </div>
+        </div>
+        <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+    </div>
+
+    <div class="inner service-step3" style="display:none;">
+        <div class="outer">
+            <strong class="tit">좌석 업그레이드</strong>
+            <div class="seat-upgrade3">
+                <div class="together">
+                    <img src="resource/img/bm/img_service-layer5.png" alt="">
+                    <ul class="together-list">
+                        <li>
+                            <div class="name me">
+                                김제니 HMSTTE
+                            </div>
+                            <em class="type">(본인)</em>
+                        </li>
+                        <li>
+                            <div class="name">
+                                <span class="custom-check"><input type="checkbox" id="tg1"><label for="tg1">정은채 HRTTYN</label></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="name">
+                                <span class="custom-check"><input type="checkbox" id="tg2"><label for="tg2">김올윈 KIM ALLWIN</label></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <img src="resource/img/bm/img_service-layer6.png" alt="">
+                </div>
+                <button type="button" class="bt-upgrade"
+                        onclick="$(this).parent().parent().parent().fadeOut();$('.service-step4').fadeIn();">결제하기
+                </button>
+            </div>
+        </div>
+        <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+    </div>
+    <div class="inner service-step4" style="display:none;">
+        <div class="outer">
+            <div class="seat-upgrade4">
+                <img src="resource/img/bm/img_service-layer7.png" alt="">
+                <button type="button" class="bt-upgrade"
+                        onclick="$(this).parent().parent().parent().fadeOut();$('.service-layer').fadeOut();">
+                    마이페이지
+                </button>
+            </div>
+        </div>
+        <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+    </div>
+</div>
+
 <div class="dims" style="display:none;"></div>
 <script src="https://allwinair.com/resource/js/jquery-2.2.4.min.js"></script>
 <script src="https://allwinair.com/resource/js/jquery.ui.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.util.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
+<script>
+    var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
+    var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
+    function numberWithCommas(x) {
+        var str = x + '';
+        return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function countdown() {
+        var now = new Date();
+        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+
+        var seconds = (endAt - now) / 1000;
+        var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
+        var min = convertTimeFormat((seconds % 3600) / 60);
+        var sec = convertTimeFormat(seconds % 60);
+        var ret = hour + ':' + min + ':' + sec;
+
+        $('.hot .prd-slider .item .times strong').html(ret);
+        $('.bm-prd-layer .infos .time').html(ret);
+        setTimeout('countdown()', 1000);
+    }
+
+    function convertTimeFormat(val) {
+        val = parseInt(val).toString();
+        return val.length == 1 ? '0' + val : val;
+    }
+
+    function loading() {
+        $("#srch-loading").find(".inner.srch-loading").hide();
+        $("#srch-loading").find(".tits strong").hide();
+        if (_type === 'A') {
+            $("#srch-loading").find(".tits strong.a_form").show();
+        } else {
+            $("#srch-loading").find(".tits strong.h_form").show();
+        }
+
+        if (_searchType === 'D') {
+            $("#srch-loading").find(".inner.dateForm").show();
+        } else {
+            $("#srch-loading").find(".inner.budgetForm").show();
+            if (_type === 'A') {
+                var $bid = $('.bidding-budget').eq(0).data("awa-bidding");
+                $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
+            } else {
+                var $bid = $('.bidding-budget').eq(1).data("awa-bidding");
+                $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
+            }
+        }
+        return $("#srch-loading");
+    };
+</script>
 <script>
     $(function () {
 
@@ -146,6 +309,20 @@
 
         $(".start-lists-scroll").mCustomScrollbar();
         $(".cal-scroll").mCustomScrollbar({axis: "x"});
+
+        $('.service-list a').on('click', function (e) {
+            e.preventDefault();
+            if ($(this).attr("href").indexOf('upgrade') > -1) {
+                $('.service-layer .inner').hide();
+                $('.service-layer .service-step1').show();
+
+                var upgradePrice = (Math.floor(Math.random() * 20) + 1) * 10000 + 100000;
+                $('.service-layer .service-step2 .price strong').html(numberWithCommas(upgradePrice) + '원');
+
+                $('.service-layer').fadeIn();
+                $('.reservation-list > ul').awaSlide({pause: 5000, auto: true});
+            }
+        })
     });
 </script>
 </body>

@@ -184,6 +184,18 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
       font-size: 0;
     }
 
+    .lang {
+      position: absolute;
+      top: 45px;
+      left: 233px;
+      font-size: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 7px;
+      }
+    }
+
     .menus {
       position: absolute;
       top: 34px;
@@ -1908,6 +1920,7 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
       }
     }
   }
+
   .service-step4 {
     .outer {
       width: 540px;
