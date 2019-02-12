@@ -233,7 +233,7 @@
             }
         });
 
-        var min = 320000, max = 350000, value = (min + max) / 2;
+        var min = 180000, max = 510000, value = (min + max) / 2;
         $('.awa-bidding').bidding({
             ment: value,
             min: min,
@@ -270,7 +270,7 @@
                 $('.service-layer .inner').hide();
                 $('.service-layer .service-step1').show();
 
-                var upgradePrice = (Math.floor(Math.random() * 20) + 1) * 10000 + 100000;
+                var upgradePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
                 $('.service-layer .service-step2 .price strong').html(numberWithCommas(upgradePrice) + '원');
 
                 $('.service-layer').fadeIn();
