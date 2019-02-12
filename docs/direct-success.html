@@ -217,56 +217,10 @@
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
-    var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
-    var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
     function numberWithCommas(x) {
         var str = x + '';
         return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-
-    function countdown() {
-        var now = new Date();
-        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-
-        var seconds = (endAt - now) / 1000;
-        var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
-        var min = convertTimeFormat((seconds % 3600) / 60);
-        var sec = convertTimeFormat(seconds % 60);
-        var ret = hour + ':' + min + ':' + sec;
-
-        $('.hot .prd-slider .item .times strong').html(ret);
-        $('.bm-prd-layer .infos .time').html(ret);
-        setTimeout('countdown()', 1000);
-    }
-
-    function convertTimeFormat(val) {
-        val = parseInt(val).toString();
-        return val.length == 1 ? '0' + val : val;
-    }
-
-    function loading() {
-        $("#srch-loading").find(".inner.srch-loading").hide();
-        $("#srch-loading").find(".tits strong").hide();
-        if (_type === 'A') {
-            $("#srch-loading").find(".tits strong.a_form").show();
-        } else {
-            $("#srch-loading").find(".tits strong.h_form").show();
-        }
-
-        if (_searchType === 'D') {
-            $("#srch-loading").find(".inner.dateForm").show();
-        } else {
-            $("#srch-loading").find(".inner.budgetForm").show();
-            if (_type === 'A') {
-                var $bid = $('.bidding-budget').eq(0).data("awa-bidding");
-                $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
-            } else {
-                var $bid = $('.bidding-budget').eq(1).data("awa-bidding");
-                $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
-            }
-        }
-        return $("#srch-loading");
-    };
 </script>
 <script>
     $(function () {
