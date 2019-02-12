@@ -221,6 +221,26 @@
         var str = x + '';
         return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+
+    function countdown() {
+        var now = new Date();
+        var endAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+
+        var seconds = (endAt - now) / 1000;
+        var hour = convertTimeFormat((seconds % (24 * 3600)) / 3600);
+        var min = convertTimeFormat((seconds % 3600) / 60);
+        var sec = convertTimeFormat(seconds % 60);
+        var ret2 = hour + '시간 ' + min + '분 ' + sec + '초';
+
+        $('.service-layer .seat-upgrade2 .info .time em').html(ret2);
+
+        setTimeout('countdown()', 1000);
+    }
+
+    function convertTimeFormat(val) {
+        val = parseInt(val).toString();
+        return val.length == 1 ? '0' + val : val;
+    }
 </script>
 <script>
     $(function () {
@@ -276,7 +296,14 @@
                 $('.service-layer').fadeIn();
                 $('.reservation-list > ul').awaSlide({pause: 5000, auto: true});
             }
-        })
+        });
+
+        countdown();
+
+        $('.bm-header .inner .lang ul li').on('click', function (e) {
+            e.preventDefault();
+            alert('서비스 중비중입니다');
+        });
     });
 </script>
 </body>

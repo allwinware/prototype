@@ -338,6 +338,12 @@
     $(".cal-scroll").mCustomScrollbar({axis: "x"});
 
     countdown();
+
+    $('.bm-header .inner .lang ul li').on('click', function (e) {
+      e.preventDefault();
+      alert('서비스 중비중입니다');
+    });
+
   });
 
   $('.vs-list ul li:not(.pop)').on('click', function (e) {

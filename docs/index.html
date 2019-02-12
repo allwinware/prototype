@@ -808,7 +808,7 @@
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
   var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
-  var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
+  var _searchType = 'B'; //D(DATE)는 날짜, B(BUDGET)는 예산
   function numberWithCommas(x) {
     var str = x + '';
     return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -823,9 +823,12 @@
     var min = convertTimeFormat((seconds % 3600) / 60);
     var sec = convertTimeFormat(seconds % 60);
     var ret = hour + ':' + min + ':' + sec;
+    var ret2 = hour + '시간 ' + min + '분 ' + sec + '초';
 
     $('.hot .prd-slider .item .times strong').html(ret);
     $('.bm-prd-layer .infos .time').html(ret);
+    $('.service-layer .seat-upgrade2 .info .time em').html(ret2);
+
     setTimeout('countdown()', 1000);
   }
 
@@ -1012,7 +1015,13 @@
         $('.service-layer').fadeIn();
         $('.reservation-list > ul').awaSlide({pause: 5000, auto: true});
       }
-    })
+    });
+
+    $('.bm-header .inner .lang ul li').on('click', function (e) {
+      e.preventDefault();
+      alert('서비스 중비중입니다');
+    });
+
   });
 </script>
 </body>
