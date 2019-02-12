@@ -298,6 +298,12 @@
             }
         });
 
+        $('.service-layer .service-step2 .price span').on('click', function (e) {
+            e.preventDefault();
+            var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+            $('.service-layer .service-step2 .price strong').html(numberWithCommas(realtimePrice) + '원');
+        });
+
         countdown();
 
         $('.bm-header .inner .lang ul li').on('click', function (e) {
