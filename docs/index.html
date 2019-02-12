@@ -173,8 +173,8 @@
           <div class="bm-srch-form" id="hotelForm" style="display:none;">
             <div class="srch-tabs">
               <ul>
-                <li><a href="#h_dateForm">날짜 검색</a></li>
-                <li><a href="#h_budgetForm" class="is-actived">예산 검색</a></li>
+	              <li><a href="#h_dateForm">날짜로 검색</a></li>
+	              <li><a href="#h_budgetForm" class="is-actived">예산으로 검색</a></li>
               </ul>
             </div>
             <div class="trip-types">
@@ -660,7 +660,7 @@
       <strong class="h_form" style="display: none;">예약 가능한 호텔을 조회중입니다</strong>
     </p>
     <div class="trips">
-      <div>
+	    <div class="trip-item a_form">
         <dl>
           <dt>인천 <strong>ICN</strong></dt>
           <dd>19.03.05 (월)</dd>
@@ -671,6 +671,12 @@
           <dd>19.03.28 (수)</dd>
         </dl>
       </div>
+	    <div class="trip-item h_form">
+		    <dl>
+			    <dt>홍콩<strong>, HONKKONG</strong></dt>
+			    <dd>19.03.05 (월)</dd>
+		    </dl>
+	    </div>
       <div class="gage" style="width:100%;">
         <span class="bar"></span>
         <span class="plane"></span>
@@ -684,7 +690,7 @@
       <strong class="h_form" style="display: none;">예약 가능한 호텔을 조회중입니다</strong>
     </p>
     <div class="trips">
-      <div>
+	    <div class="trip-item a_form">
         <dl>
           <dt>인천 <strong>ICN</strong></dt>
         </dl>
@@ -693,6 +699,11 @@
           <dt>홍콩 <strong>HKG</strong></dt>
         </dl>
       </div>
+	    <div class="trip-item h_form">
+		    <dl>
+			    <dt>홍콩<strong>, HONKKONG</strong></dt>
+		    </dl>
+	    </div>
       <div class="price">
         <strong>230,000</strong>
       </div>
@@ -700,9 +711,12 @@
         <span class="bar"></span>
         <span class="plane"></span>
       </div>
-      <p class="tips">
+	    <p class="tips a_form">
         선택하신 요금보다<br>더 저렴하거나 같은 요금의<br>스케줄이 조회됩니다.
       </p>
+	    <p class="tips h_form">
+		    선택하신 요금보다<br>더 저렴하거나<br>같은 요금의 호텔이 조회됩니다.
+	    </p>
     </div>
   </div>
 </div>
@@ -839,11 +853,11 @@
 
   function loading() {
     $("#srch-loading").find(".inner.srch-loading").hide();
-    $("#srch-loading").find(".tits strong").hide();
+    $("#srch-loading").find(".tits strong, .trip-item, .tips ").hide();
     if (_type === 'A') {
-      $("#srch-loading").find(".tits strong.a_form").show();
+      $("#srch-loading").find(".tits strong.a_form, div.a_form, p.a_form").show();
     } else {
-      $("#srch-loading").find(".tits strong.h_form").show();
+      $("#srch-loading").find(".tits strong.h_form, div.h_form, p.h_form").show();
     }
 
     if (_searchType === 'D') {
