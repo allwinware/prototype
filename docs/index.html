@@ -25,9 +25,9 @@
       <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
       <div class="lang">
         <ul>
-          <li><img src="resource/img/bm/img_en.png" alt=""></li>
-          <li><img src="resource/img/bm/img_jp.png" alt=""></li>
-          <li><img src="resource/img/bm/img_ch.png" alt=""></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_en.png" alt=""></a></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_jp.png" alt=""></a></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_ch.png" alt=""></a></li>
         </ul>
       </div>
       <div class="menus">
@@ -414,7 +414,7 @@
           <div class="hot">
             <div class="bm-tits">
               <strong class="t1 red">HOT</strong>
-              <strong class="t2"><img src="resource/img/bm/img_go-txt.png" alt="인기시즌 입찰!"></strong>
+              <strong class="t2"><img src="resource/img/bm/img_hot-txt.png" alt="인기시즌 입찰!"></strong>
               <p class="t3">나의 입찰가보다 낮은 가격으로 공동낙찰 </p>
             </div>
             <div class="prd-slider">
@@ -605,8 +605,8 @@
             </div>
             <div class="infos">
               <dl>
-                <dt>잔여수량</dt>
-                <dd class="ea red">7</dd>
+                <dt>낙찰 가능 수량</dt>
+                <dd class="ea red">8</dd>
               </dl>
               <dl>
                 <dt>관심 갖는 중</dt>
@@ -879,10 +879,12 @@
       if ($(this).attr("href").indexOf('airForm') > -1) {
         _type = 'A';
         $("#airForm .srch-tabs").find("ul li a").eq(0).trigger("click");
+        $('.additional-service .t3').text("항공권을 구매했다면 미리 좌석 업그레이드 선점!");
         $('#air-service').show();
       } else {
         _type = 'H';
         $("#hotelForm .srch-tabs").find("ul li a").eq(1).trigger("click");
+        $('.additional-service .t3').text("편안한 휴식을 위한 나만의 호텔 부가서비스 미리 선점!");
         $('#hotel-serice').show();
       }
 

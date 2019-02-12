@@ -262,7 +262,7 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, 1);
     border-bottom: 1px solid #ebebeb;
   }
 }
@@ -270,7 +270,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
 .bm-srching {
   height: 680px;
   overflow: hidden;
-
   .inner {
     position: relative;
     width: 1200px;
