@@ -879,14 +879,18 @@
       if ($(this).attr("href").indexOf('airForm') > -1) {
         _type = 'A';
         $("#airForm .srch-tabs").find("ul li a").eq(0).trigger("click");
+        $('.additional-service .t3').text('항공권을 구매했다면 미리 좌석 업그레이드 선점!');
         $('#air-service').show();
+        $('.bm-srching').css("background-image", "url(resource/img/bm/img_bg1.jpg)");
       } else {
         _type = 'H';
         $("#hotelForm .srch-tabs").find("ul li a").eq(1).trigger("click");
+        $('.additional-service .t3').text('편안한 휴식을 위한 나만의 호텔 부가서비스 미리 선점!');
         $('#hotel-serice').show();
+        $('.bm-srching').css("background-image", "url(resource/img/bm/img_bg2.jpg)");
       }
 
-      $($(this).attr("href")).fadeIn();
+      $($(this).attr("href")).show();
     });
     //날짜/예산 검색 탭 액션
     $(".bm-srch-form .srch-tabs").find("ul li a").off("click").on("click", function (e) {
@@ -901,7 +905,7 @@
         _searchType = 'B';
       }
 
-      $($(this).attr("href")).fadeIn();
+      $($(this).attr("href")).show();
     });
 
     //예산 검색 비딩바 액션
