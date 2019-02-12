@@ -178,21 +178,21 @@
               </ul>
             </div>
             <div class="trip-types">
-              <ul>
+              <ul style="visibility: visible">
                 <li>
-                  <span class="radio">
+                  <!--<span class="radio">
                     <input type="radio" id="h_tt1" name="h_trip" checked="checked" value="RT"> <label for="h_tt1">왕복</label>
-                  </span>
+                  </span>-->
                 </li>
                 <li>
-                  <span class="radio">
+                  <!--<span class="radio">
                     <input type="radio" id="h_tt2" name="h_trip" value="OW"> <label for="h_tt2">편도</label>
-                  </span>
+                  </span>-->
                 </li>
                 <li>
-                  <span class="radio">
+                  <!--<span class="radio">
                     <input type="radio" id="h_tt3" name="h_trip" value="MD"> <label for="h_tt3">다구간</label>
-                  </span>
+                  </span>-->
                 </li>
               </ul>
             </div>
@@ -993,7 +993,13 @@
       });
     });
 
-    $('.service-layer .service-step2 .price span').on('click', function (e) {
+    $('.go-bm-prd-layer .info2 .total-price a.total-price-tit').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
+    });
+
+    $('.service-layer .service-step2 .total-price span').on('click', function (e) {
       e.preventDefault();
       var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
       $('.service-layer .service-step2 .price strong').html(numberWithCommas(realtimePrice) + '원');
