@@ -1326,6 +1326,12 @@
       });
     });
 
+    $('.go-bm-prd-layer .info2 .total-price a.total-price-tit').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
+    });
+
     $('.service-layer .service-step2 .price span').on('click', function (e) {
       e.preventDefault();
       var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
