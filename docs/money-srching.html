@@ -194,6 +194,24 @@
                 <img src="resource/img/bm/img_result12.jpg" alt="">
               </li>
             </ul>
+            <ul style="display: none">
+              <li>
+                <a href="./direct-success.html" class="link2">선택</a>
+                <img src="resource/img/bm/img_result13.jpg" alt="">
+              </li>
+              <li>
+                <img src="resource/img/bm/img_result14.jpg" alt="">
+              </li>
+              <li>
+                <img src="resource/img/bm/img_result15.jpg" alt="">
+              </li>
+              <li>
+                <img src="resource/img/bm/img_result16.jpg" alt="">
+              </li>
+              <li>
+                <img src="resource/img/bm/img_result17.jpg" alt="">
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -291,6 +309,16 @@
       e.preventDefault();
       alert('서비스 중비중입니다');
     });
+
+    $('.results .row2 ul li a').on('click', function (e) {
+      e.preventDefault();
+      $('.results .row2 ul li a').removeClass("is-actived");
+      $(this).addClass("is-actived");
+      var index = $('.results .row2 ul li a').index(this);
+
+      $('.results > ul').hide();
+      $('.results > ul').eq(index % 2).fadeIn();
+    })
   });
 </script>
 </body>
