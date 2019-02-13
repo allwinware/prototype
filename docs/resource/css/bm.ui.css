@@ -285,7 +285,7 @@
 }
 
 .bm-header .inner .menus .menu li.m3 a {
-  width: 108px;
+  width: 73px;
   background: url("../../resource/img/bm/img_menu3.png") center center no-repeat;
 }
 
@@ -2028,7 +2028,7 @@
   border-radius: 2px;
   overflow: hidden;
   width: 970px;
-  height: 560px;
+  height: 595px;
 }
 
 .cal-layer .tit {
@@ -2036,8 +2036,18 @@
   font-weight: 700;
   font-size: 18px;
   color: #111;
-  line-height: 100%;
+  line-height: 140%;
   padding: 30px 24px 18px 24px;
+}
+
+.cal-layer .tit strong {
+  font-weight: 700;
+  color: #e80732;
+}
+
+.cal-layer .tit strong em {
+  font-weight: normal;
+  font-family: Geogrotesque-Bold;
 }
 
 .cal-layer .datapicker-outer .awa-datepicker {

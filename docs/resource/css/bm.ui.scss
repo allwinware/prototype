@@ -341,7 +341,7 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
 
           &.m3 {
             a {
-              width: 108px;
+              width: 73px;
               background: url('../../resource/img/bm/img_menu3.png') center center no-repeat;
             }
           }
@@ -2108,15 +2108,25 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
     border-radius: 2px;
     overflow: hidden;
     width: 970px;
-    height: 560px;
+    height: 595px;
   }
   .tit {
     display: block;
     font-weight: 700;
     font-size: 18px;
     color: #111;
-    line-height: 100%;
+    line-height: 140%;
     padding: 30px 24px 18px 24px;
+
+    strong {
+      font-weight: 700;
+      color: #e80732;
+
+      em {
+        font-weight: normal;
+        font-family: Geogrotesque-Bold;
+      }
+    }
   }
   .datapicker-outer {
     .awa-datepicker {
