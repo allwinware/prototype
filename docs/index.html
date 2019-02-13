@@ -582,16 +582,17 @@
                 <img src="resource/img/bm/img_schedule1.png" alt="">
               </div>
               <div class="bids">
-                <div class="default-price">
+                <div class="default-price go-hidden" style="display:none;">
                   정상 판매가 <strong>560,000</strong>
                 </div>
-                <div class="total-price">
+                <button type="button" class="bt-real">실시간 가격 확인하기</button>
+                <div class="total-price go-hidden" style="display:none;">
                   <a href="" class="total-price-tit">Realtime Price</a>
                   <strong>230,000</strong><em class="norm">(성인 1인 기준)</em>
                 </div>
               </div>
             </div>
-            <div class="bts">
+            <div class="bts go-hidden" style="display:none;">
               <button type="button" class="bt-reservation">구매하기</button>
             </div>
             <button type="button" class="close">close</button>
@@ -1386,6 +1387,17 @@
     $('.bm-header .inner .lang ul li').on('click', function (e) {
       e.preventDefault();
       alert('서비스 중비중입니다');
+    });
+
+    $('.bt-real').on('click', function (e) {
+      e.preventDefault();
+      $(this).fadeOut();
+      $('.go-hidden').fadeIn(0, function () {
+        setTimeout(function () {
+          $('.go-hidden').fadeOut();
+          $('.bt-real').fadeIn();
+        }, 5000);
+      });
     });
 
   });

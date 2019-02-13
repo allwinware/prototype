@@ -195,9 +195,9 @@
                 </div>
                 <div class="vs-list">
                   <ul>
-                    <li class="pop">
-                      <a href="#none" onclick="$('.hotel-layer').fadeIn();"><img src="resource/img/bm/img_hotel-thumb1.jpg"
-                                                                                 alt=""></a>
+                    <li>
+                      <a href="#none" onclick="$('.hotel-layer').fadeIn();"><img
+                          src="resource/img/bm/img_hotel-thumb1.jpg" alt=""></a>
                     </li>
                     <li>
                       <a href="#"><img src="resource/img/bm/img_hotel-thumb2.jpg" alt=""></a>
@@ -339,6 +339,16 @@
       auto: true
     });
 
+    $('.vs-list > ul').awaSlide({
+      slideWidth: 180,
+      slideMargin: 65,
+      minSlides: 4,
+      maxSlides: 4,
+      moveSlides: 1,
+      pause: 5000,
+      auto: true
+    });
+
     $(".start-lists-scroll").mCustomScrollbar();
     $(".cal-scroll").mCustomScrollbar({axis: "x"});
 
@@ -351,25 +361,25 @@
 
   });
 
-  $('.vs-list ul li:not(.pop)').on('click', function (e) {
-    e.preventDefault();
-
-    var randomIndexes = [0, 1, 2, 3];
-    var randomIndexesLength = randomIndexes.length;
-
-    for (var i = randomIndexesLength - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = randomIndexes[i];
-      randomIndexes[i] = randomIndexes[j];
-      randomIndexes[j] = temp;
-    }
-
-    for (i = 0; i < randomIndexesLength; i++) {
-      var target = $('.vs-list ul li').eq(randomIndexes[i]);
-      $('.vs-list ul').append(target);
-    }
-
-  });
+  // $('.vs-list ul li:not(.pop)').on('click', function (e) {
+  //   e.preventDefault();
+  //
+  //   var randomIndexes = [0, 1, 2, 3];
+  //   var randomIndexesLength = randomIndexes.length;
+  //
+  //   for (var i = randomIndexesLength - 1; i > 0; i--) {
+  //     var j = Math.floor(Math.random() * (i + 1));
+  //     var temp = randomIndexes[i];
+  //     randomIndexes[i] = randomIndexes[j];
+  //     randomIndexes[j] = temp;
+  //   }
+  //
+  //   for (i = 0; i < randomIndexesLength; i++) {
+  //     var target = $('.vs-list ul li').eq(randomIndexes[i]);
+  //     $('.vs-list ul').append(target);
+  //   }
+  //
+  // });
 
 </script>
 <script>

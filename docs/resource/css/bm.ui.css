@@ -1120,6 +1120,19 @@
   font-family: 'Geogrotesque-SemiBold';
 }
 
+.bm-prds .bm-prd-layer .info2 .bids .bt-real {
+  background: #1373e9;
+  width: 280px;
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  bottom: 37px;
+  left: 30px;
+}
+
 .bm-prds .bm-prd-layer .info2 .bids .total-price {
   position: absolute;
   bottom: 45px;
@@ -1543,37 +1556,16 @@
   padding-left: 25px;
 }
 
+.bm-results .bm-result-inner .results li.ad .vs-list {
+  width: 915px;
+  margin: 0 auto;
+  background: url("../../resource/img/bm/vs.png") center center no-repeat;
+}
+
 .bm-results .bm-result-inner .results li.ad li {
   margin-top: 0;
   position: relative;
-  padding: 0 33px;
   display: inline-block;
-}
-
-.bm-results .bm-result-inner .results li.ad li:first-child {
-  padding-left: 0;
-}
-
-.bm-results .bm-result-inner .results li.ad li:first-child:before {
-  display: none;
-}
-
-.bm-results .bm-result-inner .results li.ad li:last-child {
-  padding-right: 0;
-}
-
-.bm-results .bm-result-inner .results li.ad li:before {
-  content: 'VS';
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  width: 66px;
-  height: 204px;
-  line-height: 204px;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: -33px;
 }
 
 .bm-results .bm-result-inner .results li.ad .infos {

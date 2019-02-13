@@ -1202,6 +1202,19 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
           }
         }
 
+        .bt-real {
+          background: #1373e9;
+          width: 280px;
+          height: 58px;
+          line-height: 58px;
+          text-align: center;
+          color: #fff;
+          font-size: 18px;
+          position: absolute;
+          bottom: 37px;
+          left: 30px;
+        }
+
         .total-price {
           position: absolute;
           bottom: 45px;
@@ -1618,37 +1631,43 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
             padding-left: 25px;
           }
 
+          .vs-list {
+            width: 915px;
+            margin: 0 auto;
+            background: url('../../resource/img/bm/vs.png') center center no-repeat;
+          }
+
           li {
             margin-top: 0;
             position: relative;
-            padding: 0 33px;
+            //padding: 0 33px;
             display: inline-block;
 
-            &:first-child {
-              padding-left: 0;
+            //&:first-child {
+            //  padding-left: 0;
+            //
+            //  &:before {
+            //    display: none;
+            //  }
+            //}
 
-              &:before {
-                display: none;
-              }
-            }
+            //&:last-child {
+            //  padding-right: 0;
+            //}
 
-            &:last-child {
-              padding-right: 0;
-            }
-
-            &:before {
-              content: 'VS';
-              font-size: 20px;
-              font-weight: 700;
-              color: #fff;
-              width: 66px;
-              height: 204px;
-              line-height: 204px;
-              text-align: center;
-              position: absolute;
-              top: 0;
-              left: -33px;
-            }
+            //&:before {
+            //  content: 'VS';
+            //  font-size: 20px;
+            //  font-weight: 700;
+            //  color: #fff;
+            //  width: 66px;
+            //  height: 204px;
+            //  line-height: 204px;
+            //  text-align: center;
+            //  position: absolute;
+            //  top: 0;
+            //  left: -33px;
+            //}
           }
 
           .infos {
