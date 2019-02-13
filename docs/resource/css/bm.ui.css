@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import "https://allwinair.com/resource/css/air.ui.min.css";
-
 /*
 .bid {
   position: relative;
@@ -1669,6 +1668,15 @@
   left: 84px;
   width: 80px;
   height: 30px;
+  font-size: 0;
+}
+
+.bm-results .bm-result-inner .results li .link3 {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 246px;
+  height: 40px;
   font-size: 0;
 }
 
