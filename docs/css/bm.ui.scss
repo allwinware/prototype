@@ -381,7 +381,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
 .bm-srching {
   height: 680px;
   overflow: hidden;
-
   .inner {
     position: relative;
     width: 1200px;
@@ -798,7 +797,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
         display: none;
       }
     }
-
     li {
       height: 370px;
       display: inline-block;
@@ -1464,7 +1462,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
       line-height: 130%;
       margin-top: 20px;
     }
-
     .gage {
       position: relative;
       display: block;
@@ -1675,7 +1672,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
           height: 31px;
         }
       }
-
       li {
         position: relative;
         margin-top: 20px;
@@ -1810,7 +1806,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
             }
           }
         }
-
         .link {
           position: absolute;
           bottom: 95px;
@@ -2193,7 +2188,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
     width: 970px;
     height: 595px;
   }
-
   .tit {
     display: block;
     font-weight: 700;
@@ -2212,28 +2206,24 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
       }
     }
   }
-
   .datapicker-outer {
     .awa-datepicker {
       position: static;
       z-index: 1;
       border: 0;
       margin-left: 0;
-
       &.single-date {
         .month-wrapper {
           .month-item {
             &.first {
               //float: left !important;
             }
-
             &.second {
               float: right !important;
             }
           }
         }
       }
-
       .month-wrapper {
         width: 921px !important;
         position: relative;
@@ -2242,7 +2232,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
         margin: 0 auto !important;
         padding: 0;
         border: 0 !important;
-
         .month-item {
           position: relative;
           width: 450px !important;
@@ -2252,11 +2241,9 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
           clear: initial !important;
           margin-bottom: 0;
         }
-
         table {
           width: 442px;
           margin: 0 auto;
-
           thead {
             .select-wrapper {
               font-size: 0;
@@ -2265,33 +2252,27 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
               display: inline-block;
               vertical-align: middle
             }
-
             th {
               min-width: 30px;
               height: 40px;
             }
-
             .month-name {
               width: 320px;
             }
-
             .prev, .next {
               min-width: 30px;
               height: 40px;
               position: absolute;
               top: 0;
             }
-
             .prev {
               background: url('#{$imgPath}/ico_prev-arrow3.png') center center no-repeat;
               left: 130px;
             }
-
             .next {
               background: url('#{$imgPath}/ico_next-arrow3.png') center center no-repeat;
               right: 130px;
             }
-
             .dot {
               position: relative;
               top: 7px;
@@ -2301,7 +2282,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
               width: 3px;
               height: 3px;
             }
-
             .week-name {
               th {
                 font-weight: normal;
@@ -2309,45 +2289,37 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
                 color: #999;
                 height: 50px;
                 text-align: center;
-
                 &:first-child {
                   color: #fd9a7c !important;
                 }
-
                 &:last-child {
                   //color: #fd9a7c !important;
                 }
               }
             }
-
             .month-element {
               font-size: 20px;
             }
           }
-
           tbody {
             border-bottom: 1px solid #e6e6e6;
             border-left: 1px solid #e6e6e6;
-
             td {
               height: 62px;
               text-align: center;
               cursor: pointer;
               border-top: 1px solid #e6e6e6;
               border-right: 1px solid #e6e6e6;
-
               &:first-child {
                 .day {
                   color: #fd9a7c;
                 }
               }
-
               &:last-child {
                 .day {
                   //color: #fd9a7c;
                 }
               }
-
               .day {
                 width: 63px;
                 height: 62px;
@@ -2356,7 +2328,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
                 font-size: 15px;
                 color: #000;
                 font-family: "Geogrotesque-Regular";
-
                 &.invalid {
                   color: #999;
                 }
@@ -2365,7 +2336,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
                   color: #999 !important;
                   cursor: default;
                 }
-
                 &.choice {
                   color: #000 !important;
                   background: #f9ecd3;
@@ -2376,7 +2346,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
                     font-family: "Geogrotesque-Regular";
                   }
                 }
-
                 &.real-today {
                   &:after {
                     content: 'TODAY';
@@ -2390,53 +2359,42 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
                     left: 0;
                   }
                 }
-
                 &.holiday {
                   color: #fd9a7c;
                 }
               }
-
               .lastMonth {
                 color: #999 !important;
-
                 &.checked {
                   background: none !important;
                   color: #999 !important;
                 }
               }
-
               .nextMonth {
                 color: #999 !important;
-
                 &.checked {
                   background: none !important;
                   color: #999 !important;
                 }
               }
-
               .first-date-selected {
                 background: #f9c028 !important;
                 color: #fff;
               }
-
               .last-date-selected {
                 background: #f9c028 !important;
                 color: #fff;
               }
-
               .checked {
                 background: #f9ecd3;
               }
-
               .hovering {
                 background: #f9ecd3 !important;
                 color: #000;
               }
-
               .first-date-selected {
                 position: relative;
                 color: #fff !important;
-
                 &:after {
                   content: '가는날';
                   line-height: 100% !important;
@@ -2449,11 +2407,9 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
                   left: 0;
                 }
               }
-
               .last-date-selected {
                 position: relative;
                 color: #fff !important;
-
                 &:after {
                   content: '오는날';
                   line-height: 100% !important;
@@ -2471,7 +2427,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
         }
       }
     }
-
     .datapicker-bt {
       display: block;
       width: 300px;
@@ -2494,7 +2449,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
       box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
       margin-top: 0px;
     }
-
     .datepicker-tooltip:before {
       content: '';
       position: absolute;
@@ -2505,7 +2459,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
       height: 4px;
       background: url('#{$imgPath}/ico_tooltip-arrow-btm.png') center center no-repeat;
     }
-
     .datepicker-tooltip-inner {
       border: 1px solid #7d7d7d;
       font-size: 12px;
@@ -2519,7 +2472,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
     }
 
   }
-
   .close {
     position: absolute;
     top: 0;
@@ -2573,7 +2525,6 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
   padding: 30px 0;
   border-top: 1px solid #efefef;
   box-sizing: border-box;
-
   .logo {
     display: block;
     width: 88px;
