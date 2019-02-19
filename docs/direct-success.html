@@ -63,13 +63,18 @@
             <p class="t3">다른 사람보다 먼저, 더 저렴한 가격으로 탑승하는 항공편의 부가서비스까지 선점하세요! </p>
           </div>
           <div class="service-list">
-            <ul id="air-service">
-              <li><a href="#upgrade"><img src="resource/img/bm/img_service1.jpg" alt="좌석 업그레이드"></a></li>
-              <li><a href="#none"><img src="resource/img/bm/img_service2.jpg" alt="복도 좌석 미리 확보"></a></li>
-              <li><a href="#none"><img src="resource/img/bm/img_service3.jpg" alt="옆좌석 비우기"></a></li>
-              <li><a href="#none"><img src="resource/img/bm/img_service4.jpg" alt="위탁 수화물 추가 "></a></li>
-              <li><a href="#none"><img src="resource/img/bm/img_service5.jpg" alt="와이파이 "></a></li>
-            </ul>
+	          <div class="air-service" id="air-service">
+		          <ul>
+			          <li><a href="#upgrade"><img src="resource/img/bm/img_service1.jpg" alt="좌석 업그레이드"></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service2.jpg" alt="복도 좌석 미리 확보"></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service3.jpg" alt="옆좌석 비우기"></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service4.jpg" alt="위탁 수화물 추가 "></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service5.jpg" alt="와이파이 "></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service6.jpg" alt="기내식추가 "></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service7.jpg" alt="라운지 이용권"></a></li>
+			          <li><a href="#none"><img src="resource/img/bm/img_service8.jpg" alt="기내 면세점 구매"></a></li>
+		          </ul>
+	          </div>
             <ul id="hotel-serice" style="display:none;">
               <li><a href="#none"><img src="resource/img/bm/img_service1-2.jpg" alt="룸업그레이드"></a></li>
               <li><a href="#none"><img src="resource/img/bm/img_service2-2.jpg" alt="이그제큐티브 라운지"></a></li>
@@ -78,6 +83,7 @@
               <li><a href="#none"><img src="resource/img/bm/img_service5-2.jpg" alt="레이트 체크아웃"></a></li>
             </ul>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -318,6 +324,15 @@
     $('.bm-header .inner .lang ul li').on('click', function (e) {
       e.preventDefault();
       alert('서비스 중비중입니다');
+    });
+
+    $('#air-service > ul').awaSlide({
+      slideWidth: 240,
+      minSlides: 5,
+      maxSlides: 5,
+      moveSlides: 1,
+      pause: 5000,
+      auto: true
     });
   });
 </script>

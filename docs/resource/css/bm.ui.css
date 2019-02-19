@@ -670,6 +670,11 @@
   margin-top: 55px;
 }
 
+.additional-service .service-list .air-service {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .additional-service .service-list li {
   display: inline-block;
   vertical-align: top;
