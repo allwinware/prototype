@@ -15,6 +15,15 @@
   <meta property="og:site_name" content="">
   <meta property="og:description" content="">
   <link rel="shortcut icon" href="" type="image/x-icon">
+  <link rel="icon" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_16.png" sizes="16x16">
+  <link rel="icon" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_32.png" sizes="32x32">
+  <link rel="icon" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_60.png" sizes="60x60">
+  <link rel="icon" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_96.png" sizes="96x96">
+  <link rel="icon" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_144.png" sizes="144x144">
+  <link rel="icon" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_180.png" sizes="180x180">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.allwin.bid/static/img/img/allwinscanner_favicon_60.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_144.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.allwin.bid/static/img/allwinscanner_favicon_180.png">
   <title>ALLWIN BM</title>
   <link rel="stylesheet" href="resource/css/bm.ui.min.css">
 </head>
@@ -23,12 +32,19 @@
   <div class="bm-header">
     <div class="inner">
       <a href="./index.html"><h1 class="logo">ALLWIN AIR Direct</h1></a>
+      <div class="lang">
+        <ul>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_en.png" alt=""></a></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_jp.png" alt=""></a></li>
+          <li><a href="javascript:alert('서비스 중비중입니다');"><img src="resource/img/bm/img_ch.png" alt=""></a></li>
+        </ul>
+      </div>
       <div class="menus">
         <div class="menu">
           <ul>
-            <li class="m1"><a href="" class="is-actived">항공</a></li>
-            <li class="m2"><a href="">호텔</a></li>
-            <li class="m3"><a href="">항공 부가서비스</a></li>
+            <li class="m1"><a href="./date-srching.html?ld=Y" class="is-actived">항공</a></li>
+            <li class="m2"><a href="./hotel-srching.html?ld=Y">호텔</a></li>
+            <li class="m3"><a href="javascript:void(0);">항공 부가서비스</a></li>
           </ul>
         </div>
         <button type="button" class="b2b" onclick="window.open('https://allwinair.com')">ALLWIN AIR B2B</button>
@@ -38,7 +54,7 @@
 
   <div class="bm-container">
     <div class="bm-contents">
-      <div class="bm-srching" style="background:url('resource/img/bm/img_bg1.jpg') center center no-repeat;">
+      <div class="bm-srching" style="background:url('resource/img/bm/img_bg1.jpg') center center no-repeat;background-size:cover;">
         <div class="inner">
           <div class="type-tabs">
             <ul>
@@ -49,8 +65,8 @@
           <div class="bm-srch-form" id="airForm">
             <div class="srch-tabs">
               <ul>
-                <li><a href="#a_dateForm" class="is-actived">날짜 검색</a></li>
-                <li><a href="#a_budgetForm">예산 검색</a></li>
+                <li><a href="#a_dateForm">날짜로 검색</a></li>
+                <li><a href="#a_budgetForm" class="is-actived">예산으로 검색</a></li>
               </ul>
             </div>
             <div class="trip-types">
@@ -73,7 +89,7 @@
               </ul>
             </div>
             <!-- 날짜 검색 -->
-            <div class="form-box" id="a_dateForm">
+            <div class="form-box" id="a_dateForm" style="display:none;">
               <div class="bm-inputs type1">
                 <div class="input-item city">
                   <strong class="tit">출발도시</strong>
@@ -93,9 +109,9 @@
                 <div class="input-item">
                   <strong class="tit">출/귀국일</strong>
                   <div class="text">
-                    <strong class="t1">18.11.05</strong><em class="t2">(월)</em>
+                    <strong class="t1">19.03.21</strong><em class="t2">(월)</em>
                     <em class="ico">/</em>
-                    <strong class="t1">18.11.05</strong><em class="t2">(월)</em>
+                    <strong class="t1">19.03.28</strong><em class="t2">(수)</em>
                   </div>
                 </div>
               </div>
@@ -113,8 +129,8 @@
             <!-- //날짜 검색 -->
 
             <!-- 예산 검색 -->
-            <div class="form-box" id="a_budgetForm" style="display:none;">
-              <p class="tip">* 깃발을 드래그하여 지불의향가를 선택하세요.</p>
+            <div class="form-box" id="a_budgetForm">
+	            <p class="tip">* 깃발을 드래그하여 나의 예산을 선택하세요.</p>
               <div class="bm-inputs type4">
                 <div class="input-item city">
                   <strong class="tit">출발도시</strong>
@@ -150,10 +166,10 @@
               </div>
               <div class="bm-inputs type5">
                 <div class="input-item">
-                  <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
-                  <strong class="total-price">335,000</strong>
+                  <strong class="tit">나의 <br>예산을 입력하세요</strong>
+                  <strong class="total-price">230,000</strong>
                   <div class="bidding_outer">
-                    <div class="awa-bidding"></div>
+                    <div class="awa-bidding bidding-budget"></div>
                   </div>
                 </div>
               </div>
@@ -166,31 +182,31 @@
           <div class="bm-srch-form" id="hotelForm" style="display:none;">
             <div class="srch-tabs">
               <ul>
-                <li><a href="#h_dateForm" class="is-actived">날짜 검색</a></li>
-                <li><a href="#h_budgetForm">예산 검색</a></li>
+                <li><a href="#h_dateForm">날짜로 검색</a></li>
+                <li><a href="#h_budgetForm" class="is-actived">예산으로 검색</a></li>
               </ul>
             </div>
             <div class="trip-types">
-              <ul>
+              <ul style="visibility: visible">
                 <li>
-                  <span class="radio">
+                  <!--<span class="radio">
                     <input type="radio" id="h_tt1" name="h_trip" checked="checked" value="RT"> <label for="h_tt1">왕복</label>
-                  </span>
+                  </span>-->
                 </li>
                 <li>
-                  <span class="radio">
+                  <!--<span class="radio">
                     <input type="radio" id="h_tt2" name="h_trip" value="OW"> <label for="h_tt2">편도</label>
-                  </span>
+                  </span>-->
                 </li>
                 <li>
-                  <span class="radio">
+                  <!--<span class="radio">
                     <input type="radio" id="h_tt3" name="h_trip" value="MD"> <label for="h_tt3">다구간</label>
-                  </span>
+                  </span>-->
                 </li>
               </ul>
             </div>
             <!-- 날짜 검색 -->
-            <div class="form-box" id="h_dateForm">
+            <div class="form-box" id="h_dateForm" style="display:none;">
               <div class="bm-inputs type1">
                 <div class="input-item city2">
                   <strong class="tit">여행도시</strong>
@@ -203,9 +219,9 @@
                 <div class="input-item">
                   <strong class="tit">체크인/체크아웃</strong>
                   <div class="text">
-                    <strong class="t1">18.11.05</strong><em class="t2">(월)</em>
+                    <strong class="t1">19.03.21</strong><em class="t2">(월)</em>
                     <em class="ico">/</em>
-                    <strong class="t1">18.11.05</strong><em class="t2">(월)</em>
+                    <strong class="t1">19.03.28</strong><em class="t2">(수)</em>
                   </div>
                 </div>
               </div>
@@ -223,8 +239,8 @@
             <!-- //날짜 검색 -->
 
             <!-- 예산 검색 -->
-            <div class="form-box" id="h_budgetForm" style="display:none;">
-              <p class="tip">* 깃발을 드래그하여 지불의향가를 선택하세요.</p>
+            <div class="form-box" id="h_budgetForm">
+	            <p class="tip">* 깃발을 드래그하여 나의 예산을 선택하세요.</p>
               <div class="bm-inputs type4">
                 <div class="input-item city2">
                   <strong class="tit">여행도시</strong>
@@ -253,10 +269,10 @@
               </div>
               <div class="bm-inputs type5">
                 <div class="input-item">
-                  <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
-                  <strong class="total-price">335,000</strong>
+                  <strong class="tit">나의 <br>예산을 입력하세요</strong>
+                  <strong class="total-price">230,000</strong>
                   <div class="bidding_outer">
-                    <div class="awa-bidding"></div>
+                    <div class="awa-bidding bidding-budget"></div>
                   </div>
                 </div>
               </div>
@@ -275,12 +291,24 @@
           <p class="t3">항공권을 구매했다면 미리 좌석 업그레이드 선점! </p>
         </div>
         <div class="service-list">
-          <ul>
-            <li><a href=""><img src="resource/img/bm/img_service1.jpg" alt="좌석 업그레이드"></a></li>
-            <li><a href=""><img src="resource/img/bm/img_service2.jpg" alt="복도 좌석 미리 확보"></a></li>
-            <li><a href=""><img src="resource/img/bm/img_service3.jpg" alt="옆좌석 비우기"></a></li>
-            <li><a href=""><img src="resource/img/bm/img_service4.jpg" alt="위탁 수화물 추가 "></a></li>
-            <li><a href=""><img src="resource/img/bm/img_service5.jpg" alt="라운지 이용권 "></a></li>
+	        <div class="air-service" id="air-service">
+		        <ul>
+              <li><a href="#upgrade"><img src="resource/img/bm/img_service1.jpg" alt="좌석 업그레이드"></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service2.jpg" alt="복도 좌석 미리 확보"></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service3.jpg" alt="옆좌석 비우기"></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service4.jpg" alt="위탁 수화물 추가 "></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service5.jpg" alt="와이파이 "></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service6.jpg" alt="기내식추가 "></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service7.jpg" alt="라운지 이용권"></a></li>
+			        <li><a href="#none"><img src="resource/img/bm/img_service8.jpg" alt="기내 면세점 구매"></a></li>
+		        </ul>
+	        </div>
+          <ul id="hotel-serice" style="display:none;">
+            <li><a href="#none"><img src="resource/img/bm/img_service1-2.jpg" alt="룸업그레이드"></a></li>
+            <li><a href="#none"><img src="resource/img/bm/img_service2-2.jpg" alt="이그제큐티브 라운지"></a></li>
+            <li><a href="#none"><img src="resource/img/bm/img_service3-2.jpg" alt="조식 추가"></a></li>
+            <li><a href="#none"><img src="resource/img/bm/img_service4-2.jpg" alt="얼리 체크인"></a></li>
+            <li><a href="#none"><img src="resource/img/bm/img_service5-2.jpg" alt="레이트 체크아웃"></a></li>
           </ul>
         </div>
       </div>
@@ -296,10 +324,10 @@
               <ul>
                 <li class="item">
                   <div class="airline">
-                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg"
-                                          alt="진에어"
+                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-7C.svg"
+                                          alt="제주항공"
                                           onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-                    <em class="name">진에어</em>
+                    <em class="name">제주항공</em>
                   </div>
                   <div class="item-inner">
                     <div class="fav">
@@ -321,10 +349,10 @@
                 </li>
                 <li class="item">
                   <div class="airline">
-                    <em class="tail"><img src="https://cdn.allwin.bid/static/img/wing/wing-OZ.svg"
-                                          alt="아시아나항공"
+                    <em class="tail"><img src="https://cdn.allwin.bid/static/img/wing/wing-7C.svg"
+                                          alt="제주항공"
                                           onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-                    <em class="name">아시아나항공</em>
+                    <em class="name">제주항공</em>
                   </div>
                   <div class="item-inner">
                     <div class="fav">
@@ -346,10 +374,10 @@
                 </li>
                 <li class="item">
                   <div class="airline">
-                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg"
-                                          alt="진에어"
+                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-7C.svg"
+                                          alt="제주항공"
                                           onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-                    <em class="name">진에어</em>
+                    <em class="name">제주항공</em>
                   </div>
                   <div class="item-inner">
                     <div class="fav">
@@ -371,10 +399,10 @@
                 </li>
                 <li class="item">
                   <div class="airline">
-                    <em class="tail"><img src="https://cdn.allwin.bid/static/img/wing/wing-OZ.svg"
-                                          alt="아시아나항공"
+                    <em class="tail"><img src="https://cdn.allwin.bid/static/img/wing/wing-7C.svg"
+                                          alt="제주항공"
                                           onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-                    <em class="name">아시아나항공</em>
+                    <em class="name">제주항공</em>
                   </div>
                   <div class="item-inner">
                     <div class="fav">
@@ -400,17 +428,17 @@
           <div class="hot">
             <div class="bm-tits">
               <strong class="t1 red">HOT</strong>
-              <strong class="t2"><img src="resource/img/bm/img_go-txt.png" alt="인기시즌 입찰!"></strong>
+              <strong class="t2"><img src="resource/img/bm/img_hot-txt.png" alt="인기시즌 입찰!"></strong>
               <p class="t3">나의 입찰가보다 낮은 가격으로 공동낙찰 </p>
             </div>
             <div class="prd-slider">
               <ul>
                 <li class="item">
                   <div class="airline">
-                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-TW.svg"
-                                          alt="티웨이항공"
+                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-7C.svg"
+                                          alt="제주항공"
                                           onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-                    <em class="name">티웨이항공</em>
+                    <em class="name">제주항공</em>
                   </div>
                   <div class="item-inner">
                     <div class="fav">
@@ -465,10 +493,10 @@
                 </li>
                 <li class="item">
                   <div class="airline">
-                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-TW.svg"
-                                          alt="티웨이항공"
+                    <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-7C.svg"
+                                          alt="제주항공"
                                           onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-                    <em class="name">티웨이항공</em>
+                    <em class="name">제주항공</em>
                   </div>
                   <div class="item-inner">
                     <div class="fav">
@@ -527,9 +555,9 @@
           <!-- GO 레이어 -->
           <div class="bm-prd-layer go-bm-prd-layer" style="display:none;">
             <div class="airline">
-              <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
+              <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-7C.svg" alt="제주항공"
                                     onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-              <em class="name">진에어</em>
+              <em class="name">제주항공</em>
             </div>
             <div class="trip-city">
               <strong>인천 <em>ICN</em></strong> <span class="plane"></span> <strong>홍콩
@@ -559,17 +587,18 @@
                 <img src="resource/img/bm/img_schedule1.png" alt="">
               </div>
               <div class="bids">
-                <div class="default-price">
+	              <div class="default-price">
                   정상 판매가 <strong>560,000</strong>
                 </div>
-                <div class="total-price">
+                <button type="button" class="bt-real">실시간 가격 확인하기</button>
+                <div class="total-price go-hidden" style="display:none;">
                   <a href="" class="total-price-tit">Realtime Price</a>
                   <strong>230,000</strong><em class="norm">(성인 1인 기준)</em>
                 </div>
               </div>
             </div>
-            <div class="bts">
-              <button type="button" class="bt-reservation">입찰하기</button>
+            <div class="bts go-hidden" style="display:none;">
+              <button type="button" class="bt-reservation">구매하기</button>
             </div>
             <button type="button" class="close">close</button>
           </div>
@@ -577,9 +606,9 @@
           <!-- HOT 레이어 -->
           <div class="bm-prd-layer hot-bm-prd-layer" style="display:none;">
             <div class="airline">
-              <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-LJ.svg" alt="진에어"
+              <em class="tail"><img src="//cdn.allwin.bid/static/img/wing/wing-7C.svg" alt="제주항공"
                                     onerror="this.src='https://cdn.allwin.bid/static/img/wing/wing-00.svg'"></em>
-              <em class="name">진에어</em>
+              <em class="name">제주항공</em>
             </div>
             <div class="trip-city">
               <strong>인천 <em>ICN</em></strong> <span class="plane"></span> <strong>홍콩
@@ -591,8 +620,8 @@
             </div>
             <div class="infos">
               <dl>
-                <dt>잔여수량</dt>
-                <dd class="ea red">7</dd>
+                <dt>입찰 가능 수량</dt>
+                <dd class="ea red">8</dd>
               </dl>
               <dl>
                 <dt>관심 갖는 중</dt>
@@ -609,15 +638,15 @@
                 <img src="resource/img/bm/img_schedule1.png" alt="">
               </div>
               <div class="bids">
-                <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
+	              <strong class="tit">1인당 나의<br>최대 지불의향가</strong>
                 <div class="total-price"><strong>230,000</strong></div>
                 <div class="bidding_outer">
-                  <div class="awa-bidding"></div>
+                  <div class="awa-bidding bidding-default"></div>
                 </div>
               </div>
             </div>
             <div class="bts">
-              <span class="tip">* 8번째 입찰가격으로 구매 가능한 방식으로 입찰금액과 같거나 낮은 가격으로 구매가 가능합니다.</span>
+              <span class="tip">* 높은 입찰가격순 8번째 가격으로 공동 낙찰 됩니다.</span>
               <button type="button" class="bt-tender">입찰하기</button>
             </div>
             <button type="button" class="close">close</button>
@@ -636,22 +665,31 @@
     <p class="copyright">COPYRIGHT ALLWINWARE INC. ALL RIGHTS RESERVED</p>
   </div>
 </div>
+
 <!-- 로딩 -->
 <div class="bm-loading-layer" id="srch-loading" style="display:none">
   <div class="inner srch-loading dateForm" style="display:none">
     <p class="tits">
-      선택하신 스케줄로<br><strong>실시간 요금 조회중입니다</strong>
+      선택하신 스케줄로<br>
+      <strong class="a_form">실시간 요금 조회중입니다</strong>
+      <strong class="h_form" style="display: none;">예약 가능한 호텔을 조회중입니다</strong>
     </p>
     <div class="trips">
-      <div>
+      <div class="trip-item a_form">
         <dl>
           <dt>인천 <strong>ICN</strong></dt>
-          <dd>19.03.05 (월)</dd>
+          <dd>19.03.21 (월)</dd>
         </dl>
         <span class="trip-plane"></span>
         <dl>
           <dt>홍콩 <strong>HKG</strong></dt>
-          <dd>19.03.08 (목)</dd>
+          <dd>19.03.28 (수)</dd>
+        </dl>
+      </div>
+      <div class="trip-item h_form">
+        <dl>
+          <dt>홍콩<strong>, HONKKONG</strong></dt>
+          <dd>19.03.21 (월)</dd>
         </dl>
       </div>
       <div class="gage" style="width:100%;">
@@ -662,16 +700,23 @@
   </div>
   <div class="inner srch-loading budgetForm" style="display:none">
     <p class="tits">
-      선택하신 지불의향가로<br><strong>실시간 스케줄 조회중입니다</strong>-
+      선택하신 지불의향가로<br>
+      <strong class="a_form">실시간 스케줄 조회중입니다</strong>
+      <strong class="h_form" style="display: none;">예약 가능한 호텔을 조회중입니다</strong>
     </p>
     <div class="trips">
-      <div>
+      <div class="trip-item a_form">
         <dl>
           <dt>인천 <strong>ICN</strong></dt>
         </dl>
         <span class="trip-plane"></span>
         <dl>
           <dt>홍콩 <strong>HKG</strong></dt>
+        </dl>
+      </div>
+      <div class="trip-item h_form">
+        <dl>
+          <dt>홍콩<strong>, HONKKONG</strong></dt>
         </dl>
       </div>
       <div class="price">
@@ -681,19 +726,441 @@
         <span class="bar"></span>
         <span class="plane"></span>
       </div>
-      <p class="tips">
+      <p class="tips a_form">
         선택하신 요금보다<br>더 저렴하거나 같은 요금의<br>스케줄이 조회됩니다.
+      </p>
+      <p class="tips h_form">
+        선택하신 요금보다<br>더 저렴하거나<br>같은 요금의 호텔이 조회됩니다.
       </p>
     </div>
   </div>
 </div>
 <!-- //로딩 -->
+
+<div class="service-layer" style="display:none;">
+  <div class="inner service-step1" style=";">
+    <div class="outer">
+      <strong class="tit">예약한 항공 스케줄이 맞나요?</strong>
+      <div class="seat-upgrade">
+        <div class="reservation-list">
+          <ul>
+            <li><img src="resource/img/bm/img_service-layer1.png" alt=""></li>
+            <li><img src="resource/img/bm/img_service-layer1.png" alt=""></li>
+          </ul>
+        </div>
+        <button type="button" class="bt-upgrade" onclick="$(this).parent().parent().parent().fadeOut();$('.service-step2').fadeIn();">좌석
+          업그레이드
+        </button>
+      </div>
+      <div class="reservation-check">
+        <img src="resource/img/bm/img_service-layer2.png" alt="">
+      </div>
+    </div>
+    <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+  </div>
+
+  <div class="inner service-step2" style="display:none;">
+    <div class="outer">
+      <strong class="tit">좌석 업그레이드</strong>
+      <div class="seat-upgrade2">
+        <img src="resource/img/bm/img_service-layer3.png" alt="">
+        <div class="mov">
+          <iframe width="419" height="235" src="https://www.youtube.com/embed/jveoCyFv4_A" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="info">
+          <strong class="time"><em>4시간 52분 21초</em> 남음</strong>
+          <strong class="seat"><em>9석</em> 남음</strong>
+        </div>
+        <img src="resource/img/bm/img_service-layer4.png" alt="">
+        <div class="price">
+          <span style="cursor: pointer">Realtime Price</span>
+          <strong>150,000원</strong>
+        </div>
+        <button type="button" class="bt-upgrade" onclick="$(this).parent().parent().parent().fadeOut();$('.service-step3').fadeIn();">좌석
+          업그레이드하기
+        </button>
+      </div>
+    </div>
+    <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+  </div>
+
+  <div class="inner service-step3" style="display:none;">
+    <div class="outer">
+      <strong class="tit">좌석 업그레이드</strong>
+      <div class="seat-upgrade3">
+        <div class="together">
+          <img src="resource/img/bm/img_service-layer5.png" alt="">
+          <ul class="together-list">
+            <li>
+              <div class="name me">
+                김제니 HMSTTE
+              </div>
+              <em class="type">(본인)</em>
+            </li>
+            <li>
+              <div class="name">
+                <span class="custom-check"><input type="checkbox" id="tg1"><label for="tg1">정은채 HRTTYN</label></span>
+              </div>
+            </li>
+            <li>
+              <div class="name">
+                <span class="custom-check"><input type="checkbox" id="tg2"><label for="tg2">김올윈 KIM ALLWIN</label></span>
+              </div>
+            </li>
+          </ul>
+          <img src="resource/img/bm/img_service-layer6.png" alt="">
+        </div>
+        <button type="button" class="bt-upgrade" onclick="$(this).parent().parent().parent().fadeOut();$('.service-step4').fadeIn();">결제하기
+        </button>
+      </div>
+    </div>
+    <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+  </div>
+  <div class="inner service-step4" style="display:none;">
+    <div class="outer">
+      <div class="seat-upgrade4">
+        <img src="resource/img/bm/img_service-layer7.png" alt="">
+        <button type="button" class="bt-upgrade" onclick="$(this).parent().parent().parent().fadeOut();$('.service-layer').fadeOut();">
+          마이페이지
+        </button>
+      </div>
+    </div>
+    <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+  </div>
+</div>
+
+<div class="cal-layer" style="display: none">
+  <div class="inner">
+    <div class="outer">
+      <strong class="tit"><strong>인천 - 홍콩 구간</strong>을 <strong><em>230,000</em>원</strong> 이하로 다녀올 수 있는 날짜 입니다.<br>
+        원하시는 날짜를 선택해 주세요</strong>
+      <div class="datapicker-outer">
+        <div class="datapicker-view">
+          <div class="awa-datepicker no-shortcuts no-gap two-months" unselectable="on" style="user-select: none;">
+            <div class="month-wrapper">
+              <div class="month-item first">
+                <table class="month1" cellspacing="0" border="0" cellpadding="0">
+                  <thead>
+                  <tr class="caption">
+                    <th class=""><span class="prev">&lt;                   </span></th>
+                    <th colspan="5" class="month-name">
+                      <div class="month-element">2019</div>
+                      <span class="dot"></span>
+                      <div class="month-element">03</div>
+                    </th>
+                    <th class=""></th>
+                  </tr>
+                  <tr class="week-name">
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="day lastMonth  valid">24</div>
+                    </td>
+                    <td>
+                      <div class="day lastMonth  valid">25</div>
+                    </td>
+                    <td>
+                      <div class="day lastMonth  valid">26</div>
+                    </td>
+                    <td>
+                      <div class="day lastMonth  valid">27</div>
+                    </td>
+                    <td>
+                      <div class="day lastMonth  valid">28</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth valid">1</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">2</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid">3</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">4</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">5</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">6</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">7</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">8</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">9</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">10</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">11</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">12</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">13</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">14</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">15</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">16</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid">17</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">18</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">19</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">20</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">21</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">22</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">23</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid">24</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">25</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">26</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">27</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">28</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">29</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">30</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid">31</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">1</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">2</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">3</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">4</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">5</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">6</div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="month-item second">
+                <table class="month2" cellspacing="0" border="0" cellpadding="0">
+                  <thead>
+                  <tr class="caption">
+                    <th></th>
+                    <th colspan="5" class="month-name">
+                      <div class="month-element">2019</div>
+                      <span class="dot"></span>
+                      <div class="month-element">04</div>
+                    </th>
+                    <th><span class="next">&gt;</span></th>
+                  </tr>
+                  <tr class="week-name">
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="day lastMonth  valid">31</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">1</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">2</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">3</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">4</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">5</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">6</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid">7</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">8</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">9</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">10</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">11</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">12</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">13</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid">14</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">15</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">16</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">17</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">18</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">19</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">20</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">21</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">22</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">23</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">24</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">25</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">26</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">27</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">28</a></div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid">29</div>
+                    </td>
+                    <td>
+                      <div class="day toMonth  valid choice"><a href="">30</a></div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">1</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">2</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid">3</div>
+                    </td>
+                    <td>
+                      <div class="day nextMonth  valid choice"><a href="">4</a></div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="close" onclick="$(this).parent().parent().fadeOut();">close</button>
+  </div>
+</div>
+
 <script src="https://allwinair.com/resource/js/jquery-2.2.4.min.js"></script>
 <script src="https://allwinair.com/resource/js/jquery.ui.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.util.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
 <script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
 <script>
+  var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
+  var _searchType = 'B'; //D(DATE)는 날짜, B(BUDGET)는 예산
   function numberWithCommas(x) {
     var str = x + '';
     return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -708,9 +1175,12 @@
     var min = convertTimeFormat((seconds % 3600) / 60);
     var sec = convertTimeFormat(seconds % 60);
     var ret = hour + ':' + min + ':' + sec;
+    var ret2 = hour + '시간 ' + min + '분 ' + sec + '초';
 
     $('.hot .prd-slider .item .times strong').html(ret);
     $('.bm-prd-layer .infos .time').html(ret);
+    $('.service-layer .seat-upgrade2 .info .time em').html(ret2);
+
     setTimeout('countdown()', 1000);
   }
 
@@ -719,19 +1189,31 @@
     return val.length == 1 ? '0' + val : val;
   }
 
-  function loading(type) {
+  function loading() {
     $("#srch-loading").find(".inner.srch-loading").hide();
-    if (type === 'D') {
+    $("#srch-loading").find(".tits strong, .trip-item, .tips ").hide();
+    if (_type === 'A') {
+      $("#srch-loading").find(".tits strong.a_form, div.a_form, p.a_form").show();
+    } else {
+      $("#srch-loading").find(".tits strong.h_form, div.h_form, p.h_form").show();
+    }
+
+    if (_searchType === 'D') {
       $("#srch-loading").find(".inner.dateForm").show();
     } else {
       $("#srch-loading").find(".inner.budgetForm").show();
+      if (_type === 'A') {
+        var $bid = $('.bidding-budget').eq(0).data("awa-bidding");
+        $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
+      } else {
+        var $bid = $('.bidding-budget').eq(1).data("awa-bidding");
+        $("#srch-loading").find("div.price strong").text(numberWithCommas($bid.value()));
+      }
     }
     return $("#srch-loading");
   };
 </script>
 <script>
-  var _type = 'A'; //A(AIR)는 항공권, H(HOTEL)는 호텔
-  var _searchType = 'D'; //D(DATE)는 날짜, B(BUDGET)는 예산
   $(function () {
 
     $(window).scroll(function () {
@@ -741,16 +1223,26 @@
         $('.bm-header').removeClass('fixed');
       }
     });
+    //항공권/호텔 탭 액션
     $(".bm-srching .type-tabs").find("ul li a").off("click").on("click", function (e) {
       e.preventDefault();
       $(this).parents('.bm-srching .type-tabs').find("ul li a").removeClass("is-actived");
       $(this).addClass("is-actived");
 
       $(this).parents('.bm-srching').find("div.bm-srch-form").hide();
+      $('.service-list #air-service, .service-list #hotel-serice').hide();
       if ($(this).attr("href").indexOf('airForm') > -1) {
         _type = 'A';
+        $("#airForm .srch-tabs").find("ul li a").eq(1).trigger("click");
+        $('.additional-service .t3').text('항공권을 구매했다면 미리 좌석 업그레이드 선점!');
+        $('#air-service').show();
+        $('.bm-srching').css("background-image", "url(resource/img/bm/img_bg1.jpg)");
       } else {
         _type = 'H';
+        $("#hotelForm .srch-tabs").find("ul li a").eq(1).trigger("click");
+        $('.additional-service .t3').text('편안한 휴식을 위한 나만의 호텔 부가서비스 미리 선점!');
+        $('#hotel-serice').show();
+        $('.bm-srching').css("background-image", "url(resource/img/bm/img_bg2.jpg)");
       }
 
       $($(this).attr("href")).show();
@@ -773,7 +1265,27 @@
 
     //예산 검색 비딩바 액션
     var min = 180000, max = 510000, value = 230000;
-    $('.awa-bidding').bidding({
+    $('.bidding-budget').each(function () {
+      $(this).bidding({
+        ment: value,
+        min: min,
+        max: max,
+        value: value,
+        step: 100,
+        format: "currency",
+        slide: function (event, ui) {
+          $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(ui.value));
+        },
+        change: function (event, ui) {
+          $(this).closest(".input-item").find("strong.total-price").text(numberWithCommas(ui.value));
+        },
+        create: function (event, ui) {
+          $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(value));
+        }
+      });
+    });
+
+    $('.bidding-default').bidding({
       ment: value,
       min: min,
       max: max,
@@ -781,15 +1293,13 @@
       step: 100,
       format: "currency",
       slide: function (event, ui) {
-        //console.log("slide");
         $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(ui.value));
       },
       change: function (event, ui) {
-        //console.log("change");
-        $(this).closest(".input-item").find("strong.total-price").text(numberWithCommas(ui.value));
+        $(this).closest(".bids").find("div.total-price strong").text(numberWithCommas(ui.value));
       },
       create: function (event, ui) {
-        $(this).find('.bid__handle-ment').html(numberWithCommas(value));
+        $(this).closest('.bidding_outer').find('.bid__handle-ment').text(numberWithCommas(value));
       }
     });
 
@@ -802,34 +1312,108 @@
       auto: true
     });
 
-    $('.bm-prds .prd-slider .item .bt1').on('click', function () {
-      $('.go-bm-prd-layer').show();
+    $('.bm-prds .prd-slider .item .bt1').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
+
+      $('.go-bm-prd-layer').fadeIn();
       $('.go-bm-prd-layer button.close').off('click').on('click', function () {
-        $('.go-bm-prd-layer').hide();
+        $('.go-bm-prd-layer').fadeOut();
       });
     });
 
-    $('.bm-prds .prd-slider .item .bt2').on('click', function () {
-      $('.hot-bm-prd-layer').show();
+    $('.bm-prds .prd-slider .item .bt2').on('click', function (e) {
+      e.preventDefault();
+      $('.hot-bm-prd-layer').fadeIn();
       $('.hot-bm-prd-layer button.close').off('click').on('click', function () {
-        $('.hot-bm-prd-layer').hide();
+        $('.hot-bm-prd-layer').fadeOut();
       });
+    });
+
+    $('.go-bm-prd-layer .info2 .total-price a.total-price-tit').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
+    });
+
+    $('.service-layer .service-step2 .price span').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.service-layer .service-step2 .price strong').html(numberWithCommas(realtimePrice) + '원');
     });
 
     countdown();
 
     $("button.bt-srch").on('click', function () {
-      $("body").addClass("kill");
-      loading(_searchType).show();
-      if (_searchType === 'D') {
-        setTimeout(function () {
-          location.href = "./date-srching.html";
-        }, 1500);
+      if (_type === 'A') {
+        if (_searchType === 'D') {
+          $("body").addClass("kill");
+          loading().show();
+          setTimeout(function () {
+            location.href = "./date-srching.html";
+          }, 1500);
+        } else {
+          $(".cal-layer").fadeIn();
+        }
       } else {
+        $("body").addClass("kill");
+        loading().show();
         setTimeout(function () {
-          location.href = "./money-srching.html";
+          location.href = "./hotel-srching.html";
         }, 1500);
       }
+    });
+
+    $(".cal-layer .awa-datepicker div.choice").on('click', function (e) {
+      e.preventDefault();
+      $('.cal-layer').fadeOut();
+      $("body").addClass("kill");
+      loading().show();
+      setTimeout(function () {
+        location.href = "./money-srching.html";
+      }, 1500);
+    });
+
+    $('.additional-service .service-list a').on('click', function (e) {
+      e.preventDefault();
+      if ($(this).attr("href").indexOf('upgrade') > -1) {
+        $('.service-layer .inner').hide();
+        $('.service-layer .service-step1').show();
+
+        var upgradePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+        $('.service-layer .service-step2 .price strong').html(numberWithCommas(upgradePrice) + '원');
+
+        $('.service-layer').fadeIn();
+        $('.reservation-list > ul').awaSlide({pause: 5000, auto: true});
+      }
+    });
+
+    $('.bm-header .inner .lang ul li').on('click', function (e) {
+      e.preventDefault();
+      alert('서비스 중비중입니다');
+    });
+
+    $('.bt-real').on('click', function (e) {
+      e.preventDefault();
+      var realtimePrice = (Math.floor(Math.random() * 35) + 1) * 10000 + 150000;
+      $('.go-bm-prd-layer .info2 .bids .total-price strong').html(numberWithCommas(realtimePrice));
+      $(this).fadeOut();
+      $('.go-hidden').fadeIn(0, function () {
+        setTimeout(function () {
+          $('.go-hidden').fadeOut();
+          $('.bt-real').fadeIn();
+        }, 5000);
+      });
+    });
+
+    $('#air-service > ul').awaSlide({
+      slideWidth: 240,
+      minSlides: 5,
+      maxSlides: 5,
+      moveSlides: 1,
+      pause: 5000,
+      auto: true
     });
   });
 </script>
