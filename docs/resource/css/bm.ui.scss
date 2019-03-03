@@ -823,6 +823,170 @@ $imgPath: 'https://cdn.allwin.bid/air/resource/img';
   }
 }
 
+.jaju-service {
+  border-bottom: 1px solid #ff870c;
+
+  .jeju-tabs {
+    position: relative;
+    text-align: center;
+    font-size: 0;
+    margin-top: 55px;
+
+    ul {
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #ff7b00;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+      }
+    }
+
+    li {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 5px;
+      border: 1px solid #dce0e0;
+      border-bottom: 1px solid #fff;
+      box-sizing: border-box;
+      background: #fff;
+      z-index: 1;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.jt1 {
+        a {
+          background: url('../../resource/img/bm/img_jeju-tab1_off.jpg') center center no-repeat;
+        }
+      }
+
+      &.jt2 {
+        a {
+          background: url('../../resource/img/bm/img_jeju-tab2_off.jpg') center center no-repeat;
+        }
+      }
+
+      &.jt3 {
+        a {
+          background: url('../../resource/img/bm/img_jeju-tab3_off.jpg') center center no-repeat;
+        }
+      }
+
+      &.jt4 {
+        a {
+          background: url('../../resource/img/bm/img_jeju-tab4_off.jpg') center center no-repeat;
+        }
+      }
+
+      &.jt5 {
+        a {
+          background: url('../../resource/img/bm/img_jeju-tab5_off.jpg') center center no-repeat;
+        }
+      }
+
+      &.active {
+        z-index: 3;
+        border: 1px solid #ff7b00;
+        border-bottom: 1px solid #fff;
+
+        &.jt1 {
+          a {
+            background: url('../../resource/img/bm/img_jeju-tab1_on.jpg') center center no-repeat;
+          }
+        }
+
+        &.jt2 {
+          a {
+            background: url('../../resource/img/bm/img_jeju-tab2_on.jpg') center center no-repeat;
+          }
+        }
+
+        &.jt3 {
+          a {
+            background: url('../../resource/img/bm/img_jeju-tab3_on.jpg') center center no-repeat;
+          }
+        }
+
+        &.jt4 {
+          a {
+            background: url('../../resource/img/bm/img_jeju-tab4_on.jpg') center center no-repeat;
+          }
+        }
+
+        &.jt5 {
+          a {
+            background: url('../../resource/img/bm/img_jeju-tab5_on.jpg') center center no-repeat;
+          }
+        }
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+      width: 234px;
+      height: 168px;
+    }
+
+    strong {
+      position: absolute;
+      bottom: 27px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      display: block;
+    }
+  }
+
+  .jeju-tab-conts {
+    font-size: 0;
+    text-align: center;
+
+    .tab-cont-item {
+      position: relative;
+      padding: 80px 0 90px 0;
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+
+    .in {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hover {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 388px;
+      height: 376px;
+      z-index: 2;
+    }
+
+    .hover-thumb {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 388px;
+      height: 376px;
+      z-index: 1;
+    }
+  }
+}
+
 .bm-prds {
   position: relative;
   background: #f1f5f5;
