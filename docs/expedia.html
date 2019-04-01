@@ -1811,74 +1811,72 @@
 		z-index: 10;
 		background: url('./resource/img/bm/img_layer.jpg') center center no-repeat;
 	}
+
+	.service-list {
+		text-align: center;
+		font-size: 0;
+		margin-top: 118px;
+	}
+
+	.service-list .air-service {
+		position: relative;
+		width: 784px;
+		margin: 0 auto;
+	}
+
+	.service-list .air-service .awa-slide__prev {
+		font-size: 0;
+		position: absolute;
+		top: 50%;
+		left: -60px;
+		width: 34px;
+		height: 63px;
+		margin-top: -72px;
+		z-index: 10;
+		background: url('./resource/img/bm/arrow-prev2.png') center center no-repeat;
+	}
+
+	.service-list .air-service .awa-slide__next {
+		font-size: 0;
+		position: absolute;
+		top: 50%;
+		right: -60px;
+		width: 34px;
+		height: 63px;
+		margin-top: -72px;
+		z-index: 10;
+		background: url('./resource/img/bm/arrow-next2.png') center center no-repeat;
+	}
+
+	.service-list .air-service .awa-slide__pager {
+		display: none;
+	}
+
+	.service-list li {
+		width: 196px;
+		height: 370px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.service-list li a {
+		display: block;
+		width: 196px;
+		margin-top: 20px;
+		-webkit-box-shadow: 0px 15px 30px -8px rgba(0, 0, 0, 0.15);
+		-moz-box-shadow: 0px 15px 30px -8px rgba(0, 0, 0, 0.15);
+		box-shadow: 0px 15px 30px -8px rgba(0, 0, 0, 0.15);
+		-webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+
+	.service-list li a:hover {
+		-ms-transform: translateY(-20px);
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
 </style>
 <div class="service-layer" style="display:none;">
-	<style>
-		.service-list {
-			text-align: center;
-			font-size: 0;
-			margin-top: 118px;
-		}
-
-		.service-list .air-service {
-			position: relative;
-			width: 784px;
-			margin: 0 auto;
-		}
-
-		.service-list .air-service .awa-slide__prev {
-			font-size: 0;
-			position: absolute;
-			top: 50%;
-			left: -60px;
-			width: 34px;
-			height: 63px;
-			margin-top: -72px;
-			z-index: 10;
-			background: url('./resource/img/bm/arrow-prev2.png') center center no-repeat;
-		}
-
-		.service-list .air-service .awa-slide__next {
-			font-size: 0;
-			position: absolute;
-			top: 50%;
-			right: -60px;
-			width: 34px;
-			height: 63px;
-			margin-top: -72px;
-			z-index: 10;
-			background: url('./resource/img/bm/arrow-next2.png') center center no-repeat;
-		}
-
-		.service-list .air-service .awa-slide__pager {
-			display: none;
-		}
-
-		.service-list li {
-			width: 196px;
-			height: 370px;
-			display: inline-block;
-			vertical-align: top;
-		}
-
-		.service-list li a {
-			display: block;
-			width: 196px;
-			margin-top: 20px;
-			-webkit-box-shadow: 0px 15px 30px -8px rgba(0, 0, 0, 0.15);
-			-moz-box-shadow: 0px 15px 30px -8px rgba(0, 0, 0, 0.15);
-			box-shadow: 0px 15px 30px -8px rgba(0, 0, 0, 0.15);
-			-webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-			transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-		}
-
-		.service-list li a:hover {
-			-ms-transform: translateY(-20px);
-			-webkit-transform: translateY(-20px);
-			transform: translateY(-20px);
-		}
-
-	</style>
 	<div class="service-list">
 		<div class="air-service" id="air-service">
 			<ul>
@@ -1894,7 +1892,7 @@
 		</div>
 	</div>
 	<button taype="button" onclick="$('.service-layer, .dims').hide();"
-	        style="position:absolute;top: -8px;right: -3px;width:40px;height:40px;background:none;"></button>
+					style="position:absolute;top:0;right:0;width:56px;height:57px;background: url('./resource/img/bm/img_close.jpg') center center no-repeat;"></button>
 </div>
 <div class="dims" style="display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:5;background:rgba(0,0,0,.2);"></div>
 
