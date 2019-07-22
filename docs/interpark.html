@@ -1757,7 +1757,7 @@
 		top: 50%;
 		left: 50%;
 		width: 981px;
-		height: 566px;
+		height: 643px;
 		-ms-transform: translate(-50%, -50%);
 		-webkit-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
@@ -1774,6 +1774,7 @@
 		position: relative;
 		width: 784px;
 		margin: 0 auto;
+		height: 340px;
 	}
 
 	.service-list .air-service .awa-slide__prev {
@@ -1831,7 +1832,35 @@
 	.interpark-txts {
 		text-align: center;
 		padding: 35px 0 40px 0;
-	}
+}	
+	.bottom {
+		background : #878adb;
+		height: 36px;
+		color: #fff;
+		font-family: "Noto Sans","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo",Dotum,"돋움",sans-serif;
+		padding: 12px 12px 12px 20px;
+		font-size: 18px;
+		font-weight: 700;
+    	letter-spacing: -1px;
+    	line-height: 33px;
+    	position: relative;
+}
+	.bottom a {
+		display: inline-block;
+		width: 106px;
+		height: 36px;
+		background: #4b52c5 url('resource/img/bm/arr.png') no-repeat 84% center;
+		color: #fff;
+		font-size: 14px;
+		padding-left: 30px;
+		position: absolute;
+    	right: 12px;
+    	top: 12px;
+	
+}
+	.bottom a:hover {
+		text-decoration: none;
+}
 </style>
 <div class="service-layer" style="display:none;">
 	<p class="interpark-txts"><img src="resource/img/bm/img_interpark-text1.jpg" alt=""></p>
@@ -1851,6 +1880,11 @@
 				<li><a href="#none"><img src="resource/img/bm/img_small-service11.jpg" alt="와이파이 도시락"></a></li>
 			</ul>
 		</div>
+	</div>
+	<div class="bottom">
+	<span class="txt">여행준비는 잘 하고 있나요? </span>
+	<a href="jejuair.html">자세히 보기 </a>
+	
 	</div>
 	<button taype="button" onclick="$('.service-layer, .dims').hide();"
 					style="position:absolute;top:0;right:0;width:56px;height:57px;background: url('./resource/img/bm/img_close.jpg') center center no-repeat;"></button>

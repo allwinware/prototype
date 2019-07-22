@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>예약정보입력 - Tour-Desktop</title>
+	<meta charset="utf-8">
+	<meta name="description" content="투어 Desktop">
+	<meta name="author" content="INTERPARK">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" href="https://tour.interpark.com/global/css/layout_ssl.css">
+	<link rel="stylesheet" href="https://tour.interpark.com/global/css/ui_common_ssl.css">
+	<link rel="stylesheet" href="https://tour.interpark.com/global/css/ui_module_ssl.css">
+	<link rel="stylesheet" href="https://tour.interpark.com/global/css/air_search_ssl.css">
+
+	<!-- 	<script type="text/javascript" src="https://tour.interpark.com/global/js/prototype.js" charset="euc-kr"></script>
+		<script type="text/javascript" src="https://tour.interpark.com/global/js/common.js" charset="euc-kr"></script>
+		<script type="text/javascript" src="https://tour.interpark.com/global/js/gate.js" charset="euc-kr"></script>
+		<script type="text/javascript" src="https://tour.interpark.com/global/js/virtualGET.js" defer="defer" charset="euc-kr"></script> -->
+
+	<!-- 	<script src="/global/js/jquery-1.7.2.min.js"></script>
+		<script src="/global/js/jquery-ui-1.12.1.js"></script>
+		<script src="/global/js/jQuery.tmpl.min.js"></script>
+		<script src="/global/js/jquery.datalink.js"></script> -->
+
+	<!-- <script src="/global/js/enter_info.js" charset="utf-8"></script> -->
+
+	<script>
+
+	</script>
+
+
+</head>
+<body id="air_enter_info" class="air-sub">
+<style>
+	.jejuair-main-top {
+		background: url('resource/img/bm/bg_jejuair_top.jpg') repeat-x;
+		width: 100%;
+    	margin: 0 auto;
+}
+	.top {
+		margin: 0 auto;
+    	width: 1200px;
+}
+	.jejuair-main-bottom {
+		background: url('resource/img/bm/bg_jejuair_bottom.jpg') repeat-x;
+		width: 100%;
+    	margin: 0 auto;
+}
+	.bottom {
+		margin: 0 auto;
+    	width: 1200px;
+}
+	.allwin-age {
+		background: #ffe9e3;
+		height: 316px;
+		width: 100%;
+		margin: 40px 0 ;
+}
+	.service-list {
+		margin: 0 auto;
+    	width: 1000px;	
+}
+	.service-list .air-service {
+		position: relative;
+		width: 1000px;
+		margin: 0 auto;
+}
+	.service-list h3 {
+		font-family: "Noto Sans","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo",Dotum,"돋움",sans-serif;
+		font-size: 24px;
+		font-weight: 400;
+    	letter-spacing: -0.1rem;
+    	color: #000;
+    	padding: 48px 0 28px;
+}
+	.service-list li {
+		width: 200px;
+		height: 160px;
+        display: inline-block;
+        vertical-align: top;
+}
+	.service-list li:before {
+		content:"";
+		width: 1px;
+		height: 50px;
+		background: #e5d2cd;
+		position: absolute;
+    	right: 0;
+    	top: 40px;
+}
+	.service-list .air-service .awa-slide__prev {
+		font-size: 0;
+		position: absolute;
+		top: 65%;
+		left: -60px;
+		width: 34px;
+		height: 63px;
+		margin-top: -72px;
+		z-index: 10;
+		background: url('resource/img/bm/arr-l.png') center center no-repeat;
+}
+	.service-list .air-service .awa-slide__next {
+		font-size: 0;
+		position: absolute;
+		top: 65%;
+		right: -60px;
+		width: 34px;
+		height: 63px;
+		margin-top: -72px;
+		z-index: 10;
+		background: url('resource/img/bm/arr-r.png') center center no-repeat;
+}
+	.service-list .air-service .awa-slide__pager {
+		display: none;
+}
+</style>
+	<div class="jejuair-main-top">
+		<div class="top"><img src="resource/img/bm/img_jejuair_top.jpg" alt="제주항공메인화면"></div>
+	</div>
+	<div class="allwin-age">
+		<div class="service-list">
+			<h3>여행 준비는 잘 하고 있나요?</h3>
+			<div class="air-service" id="air-service">
+				<ul>
+					<li><a href="#none"><img src="resource/img/bm/ico_ags1.png" alt="카쉐어링"></a></li>
+					<li><a href="#none"><img src="resource/img/bm/ico_ags2.png" alt="공항발렛파킹"></a></li>
+					<li><a href="#none"><img src="resource/img/bm/ico_ags3.png" alt="DUTYFREE"></a></li>
+					<li><a href="#none"><img src="resource/img/bm/ico_ags4.png" alt="여행자 보험"></a></li>
+					<li><a href="#none"><img src="resource/img/bm/ico_ags5.png" alt="환전"></a></li>
+					<li><a href="#none"><img src="resource/img/bm/ico_ags6.png" alt="로밍"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="jejuair-main-bottom">
+		<div class="bottom"><img src="resource/img/bm/img_jejuair_bottom.jpg" alt="제주항공메인화면"></div>
+	</div>
+	
+
+<script src="https://allwinair.com/resource/js/jquery-2.2.4.min.js"></script>
+<script src="https://allwinair.com/resource/js/jquery.ui.min.js"></script>
+<script src="https://allwinair.com/resource/js/air.util.plugin.min.js"></script>
+<script src="https://allwinair.com/resource/js/air.ui.plugin.min.js"></script>
+<script src="https://allwinair.com/resource/js/air.ui.min.js"></script>
+<script>
+  $(function () {
+    $('#air-service > ul').awaSlide({
+      slideWidth: 196,
+      minSlides: 5,
+      maxSlides: 5,
+      moveSlides: 1,
+      pause: 5000,
+      auto: true
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
